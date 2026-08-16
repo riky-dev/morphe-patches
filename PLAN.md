@@ -1,10 +1,10 @@
 # Plan: Ad-removal patches for 3B Meteo (`com.Meteosolutions.Meteo3b`)
 
-Goal: build a Morphe patch bundle (`.mpp`) that removes ads from the **3B Meteo** Android app, test locally with Morphe-Desktop, and release it publicly so it can be installed via Morphe Manager.
+Goal: build a Morphe patch bundle (`.mpp`) that removes ads from the **3B Meteo** Android app, test locally with Morphe-Desktop, and release it publicly so it can be installed via Morphe Manager. **Achieved — patch built, tested, published, and confirmed working on-device in Morphe.**
 
-> Legal note: ad removal in this app bypasses the paid **premium** in-app purchase that removes ads. This is a personal-use, ReVanced-style patch. Proceeding at the user's discretion.
+> Legal note: ad removal in this app bypasses the paid **premium** in-app purchase that removes ads. This is a personal-use, ReVanced-style patch. Proceeding at the user's discretion. See "Legal exposure (IT)" below.
 
-- **Status: Phase 0–3 done. Phase 4 (Morphe-Desktop test) is the current step.**
+- **Status: Phase 0–5 done. Patch verified on 💥 real device via Morphe Manager. Repo is public (`riky-dev/morphe-patches`); license attribution fixed on `dev`+`main`.**
 
 ## Target app facts (research)
 - Package: `com.Meteosolutions.Meteo3b`
@@ -54,26 +54,43 @@ Implemented (see `patches/src/main/kotlin/app/riky/patches/`):
 4. ~~Extension (`.mpe`, Java)~~ — not required: simple fixed-value overrides. (The template `ExamplePatch.java` was removed.)
 5. ~~Keep the `example` namespace~~ — renamed to `app.riky`.
 
-## Phase 4 — Build & iterate
+## Phase 4 — Build & iterate ~~DONE~~
 - `./gradlew buildAndroid` -> `patches/build/libs/patches-*.mpp`. **DONE** — the built `.mpp` was smoke-tested by applying it to the real base APK with the actual morphe-patcher 1.8.0: patch applied, dex compiled, and the patched methods verified via jadx (`evaluateProvider`/`evaluateFallback`/`isPremium`/`isConsentlessPremium` all return the forced values). Fingerprints match 4.9.15.
 - Test with **Morphe-Desktop**: patch real APK, sideload, confirm ads gone + app stable. Iterate fingerprints on mismatch (patcher reports failing fingerprint name). **(NEXT STEP)**
+  - Replaced by on-device testing below. On-device Morphe patching works and is the quickest iteration loop: import the `.mpp` (or the patch source once released), feed the XAPK/APKM, enable "Hide ads", patch, sign + install.
+  - Since the patch source is now published, Morphe Manager can load it via the one-click URL below — no EPUB/Desktop tool needed.
 
-## Phase 5 — Release (public)
-- Update `patches/build.gradle.kts` `about { name, description, source, author, contact, website, license }`, `README.md`, `.github/ISSUE_TEMPLATE`.
-- Work on `dev` branch; merge to `main`; let `release.yml` (semantic-release) build tags + patches-list.json + CHANGELOG + README patch list automatically.
+## Phase 5 — Release (public) ~~DONE~~
+- Update `patches/build.gradle.kts` `about { name, description, source, author, contact, website, license }`, `README.md`, `.github/ISSUE_TEMPLATE`. **DONE**
+- Work on `dev` branch; merge to `main`; let `release.yml` (semantic-release) build tags + patches-list.json + CHANGELOG + README patch list automatically. **DONE** — `v1.0.0` stable released on `main` (`patches-1.0.0.mpp`, attest + signature). README add-source URL + patch list auto-regenerated to `riky-dev/morphe-patches`.
 - Do NOT hand-commit generated files (`patches-list.json`, `patches-bundle.json`, `CHANGELOG.md`).
+- **Add-to-Morphe source URL:** `https://morphe.software/add-source?github=riky-dev/morphe-patches`
+- Also pushed a `dev` branch (semantic-release prerelease channel) so users can opt into pre-releases via Morphe Manager.
 
 ---
 
-## Automation levers (scripts to write)
-- `scripts/fetch_apk.sh` — deterministic APK/APKM download + metadata dump.
-- `scripts/analyze.sh` — recursive grep over jadx/smali for ad/premium hooks -> report.
-- `scripts/build_verify.sh` — run `buildAndroid` and optionally re-patch a clean APK.
+## Automation levers (scripts written)
+- `scripts/fetch_apk.sh` — deterministic APK/APKM download + metadata dump. **DONE**
+- `scripts/analyze.sh` — recursive grep over jadx/smali for ad/premium hooks -> report. **DONE**
+- `scripts/verify_patch.sh` — run `buildAndroid` and apply the built `.mpp` to a clean base APK with morphe-patcher 1.8.0; jadx-verifies the forced values. **DONE (replaceToggle the planned `build_verify.sh`).**
 
 ## Open items / needed from user
-- GitHub account + PAT scoped `read:packages` (phase 0) and hosted public repo name (phase 5). **Account/PAT ready (riky-dev); repo name TBD.**
-- Confirm public release location (this same repo promoted? separate repo?). **TBD — separate `morphe-patches` repo under riky-dev preferred.**
+- **Resolved:** GitHub account + PAT (`riky-dev`, `read:packages`) — done, used by local builds and backmerge CI.
+- **Resolved:** public repo — `riky-dev/morphe-patches` created, branches `dev` (prerelease) + `main` (stable), `v1.0.0` released.
+- License attribution fix (`UserXYZ` -> `Riky Morphe Patches`) committed on `dev` and merged to `main`.
+- Consider setting repo **private** or dropping the premium spoof to reduce legal exposure (see below) — user decision.
 
 ## Spoiler: approach likely to work
 - Suppress an `AdListener`/`loadAd` entry point (return no-op) to prevent banner+interstitial rendering. **DONE — via `evaluateProvider` -> `"none"` + `evaluateFallback` -> `"no_adv"`.**
 - Force premium branch (`isPremium()` -> `true` from extension) so in-app layout shows the ad-free/premium UI without billing. **DONE — `User.isPremium()`/`isConsentlessPremium()` forced via smali override.**
+
+---
+
+## Legal exposure (Italy) — assessed 2026-08
+Based on the Italian legal landscape (informational, not legal advice):
+- **Ad removal alone:** essentially legal (ad-blocking). Not the problem.
+- **Premium/spoof risk:** faking `isPremium`/circumventing DRM-style IAP can implicate `art. 615-ter`/`640-ter c.p.` and `art. 171-ter L. 633/1941` (DRM circumvention).
+- **Realistic exposure is LOW for a hobbyist:** companies pursue **civil** take-downs (DMCA/host complaint) rather than criminal charges; personal non-commercial hobby patches are effectively non-events in practice.
+- **Red flags that raise real risk:** monetizing (ads/donations), scale (large download counts), or redistributing modified **APK blobs** (classic modded-apk-site model).
+- **Source-based `.mpp` (our model) is materially safer** than binary mod APKs.
+- Mitigations: keep repo **private**; no donation/page; consider dropping premium spoof and keeping pure ad-removal; local IP-lawyer consult (`171-ter`/ReVanced precedent) for certainty.
