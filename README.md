@@ -1,12 +1,12 @@
-# 👋🧩 Morphe Patches template
-
-Template repository for Morphe Patches.
-
-## ❓ About
+# 👋🧩 Riky Morphe Patches
 
 Patches for apps I like.
 
-<!-- TODO: Update this about section with a brief introduction/summary about this repo and what it offers. -->
+## ❓ About
+
+Ad-removal patches for Android apps, published as a Morphe patch bundle. Currently removes ads from **3B Meteo**.
+
+The first release will clean up the development instructions below and replace the patch list placeholder with the real generated list.
 
 ### How to use these patches
 
