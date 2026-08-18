@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/riky-dev/morphe-patches/compare/v1.2.0...v1.3.0) (2026-08-18)
+
+### ✨ New Features
+
+* **devcheck:** add Unlock Pro patch ([f59b5d7](https://github.com/riky-dev/morphe-patches/commit/f59b5d78e62bd62cfb4968e04f4e3c18dbaaa453))
+
 ## [1.2.0](https://github.com/riky-dev/morphe-patches/compare/v1.1.0...v1.2.0) (2026-08-18)
 
 ### ✨ New Features
