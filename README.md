@@ -1,10 +1,10 @@
-# 👋🧩 Riky Morphe Patches
-
-Patches for apps I like.
+# 👋🧩 Riky's Morphe Patches
 
 ## ❓ About
 
-Ad-removal patches for Android apps, published as a Morphe patch bundle. Currently removes ads from **3B Meteo**.
+Ad-removal and premium-unlock patches for Android apps, published as a Morphe patch bundle.
+
+This project is a fork of the [Morphe patches template](https://github.com/MorpheApp/morphe-patches-template) by the Morphe contributors, extended with additional patches and development tooling.
 
 ### How to use these patches
 
@@ -72,4 +72,8 @@ See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation
 
 ## 📜 License
 
-Riky Morphe Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+Riky's Morphe Patches are licensed under the [GNU General Public License v3.0](LICENSE).
+
+This project is based on the [Morphe patches template](https://github.com/MorpheApp/morphe-patches-template). Copyright (C) 2025 Morphe contributors. Modifications copyright (C) 2026 [riky-dev](https://github.com/riky-dev).
+
+See [NOTICE](NOTICE) for Morphe branding restrictions and additional terms.

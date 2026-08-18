@@ -110,7 +110,7 @@ Extensions (`.mpe` Java modules) live in `extensions/extension/` — only needed
 
 ## Release rules
 
-- Develop on `dev` branch; merge to `main` for stable releases
+- Develop on `main`; semantic-release publishes from pushes to `main`
 - Use [conventional commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `bump:`)
 - **Never hand-edit** `patches-list.json`, `patches-bundle.json`, or `CHANGELOG.md` — semantic-release generates them
 - CI runs `./gradlew :patches:buildAndroid` on non-release pushes
