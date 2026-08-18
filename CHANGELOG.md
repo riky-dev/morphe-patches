@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.3.1) (2026-08-18)
+
+### 🐛 Bug Fixes
+
+* **devcheck:** bypass PairIP protection on re-signed APKs ([65e6ece](https://github.com/riky-dev/morphe-patches/commit/65e6ecefd746b511c366d2b30d620192db26c7f5))
+
 ## [1.3.0](https://github.com/riky-dev/morphe-patches/compare/v1.2.0...v1.3.0) (2026-08-18)
 
 ### ✨ New Features
