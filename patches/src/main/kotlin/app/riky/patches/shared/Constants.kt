@@ -21,6 +21,17 @@ object Constants {
         )
     )
 
+    // DevCheck Device & System Info: https://apkpure.net/app/devcheck-device-system-info-app/flar2.devcheck
+    val COMPATIBILITY_DEVCHECK = Compatibility(
+        name = "DevCheck Device & System Info",
+        packageName = "flar2.devcheck",
+        apkFileType = ApkFileType.XAPK,
+        appIconColor = 0x4CAF50,
+        targets = listOf(
+            AppTarget(version = "6.50")
+        )
+    )
+
     // Electron: battery health info: https://apkpure.net/app/com.mahersafadi.electron
     val COMPATIBILITY_ELECTRON = Compatibility(
         name = "Electron: battery health info",
