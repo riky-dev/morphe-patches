@@ -6,7 +6,8 @@ import app.riky.patches.shared.Constants.COMPATIBILITY_DEVCHECK
 
 // DevCheck ships with Google PairIP protection. Morphe re-signs the APK, so the
 // protection layer rejects it and redirects to the Play Store before the app
-// starts. These hooks no-op the startup checks so patched builds can launch.
+// starts. Hook SignatureCheck like pairipfix: no-op verifyIntegrity and force
+// verifySignatureMatches to succeed so the startup VM can still register hooks.
 @Suppress("unused")
 val bypassAppProtectionPatch = bytecodePatch(
     name = "Bypass app protection",
@@ -23,17 +24,11 @@ val bypassAppProtectionPatch = bytecodePatch(
             """
         )
 
-        // Skip only the startup integrity VM; other VMRunner hooks still run.
-        PairIpVmRunnerInvokeFingerprint.method.addInstructions(
+        PairIpVerifySignatureMatchesFingerprint.method.addInstructions(
             0,
             """
-                const-string v0, "DFQzzv4Rl5kZNZOE"
-                invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-                move-result v0
-                if-nez v0, :pairip_continue
-                const/4 v0, 0x0
-                return-object v0
-                :pairip_continue
+                const/4 v0, 0x1
+                return v0
             """
         )
     }

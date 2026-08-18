@@ -14,6 +14,6 @@ verify:
     - file: com/pairip/SignatureCheck.java
       pattern: 'Method not decompiled: com.pairip.SignatureCheck.verifyIntegrity'
       label: bypassPairIpIntegrity
-    - file: com/pairip/VMRunner.java
-      pattern: 'DFQzzv4Rl5kZNZOE'
-      label: bypassPairIpStartup
+    - file: com/pairip/SignatureCheck.java
+      pattern: 'return true;'
+      label: bypassPairIpSignatureMatch

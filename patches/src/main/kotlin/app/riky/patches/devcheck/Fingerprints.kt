@@ -35,12 +35,11 @@ internal object PairIpVerifyIntegrityFingerprint : Fingerprint(
     parameters = listOf("Landroid/content/Context;")
 )
 
-// Startup VM bytecode (assets/DFQzzv4Rl5kZNZOE) opens Play Store on tampered installs.
-// The program name lives in a static field, so fingerprint launch() by its invoke call.
-internal object PairIpVmRunnerInvokeFingerprint : Fingerprint(
-    definingClass = "Lcom/pairip/VMRunner;",
-    name = "invoke",
+// Native startup VM also calls back into this helper; always-true matches pairipfix behaviour.
+internal object PairIpVerifySignatureMatchesFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/SignatureCheck;",
+    name = "verifySignatureMatches",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
-    returnType = "Ljava/lang/Object;",
-    parameters = listOf("Ljava/lang/String;", "[Ljava/lang/Object;")
+    returnType = "Z",
+    parameters = listOf("Ljava/lang/String;")
 )
