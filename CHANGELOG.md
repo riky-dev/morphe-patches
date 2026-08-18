@@ -1,3 +1,9 @@
+## [1.3.2](https://github.com/riky-dev/morphe-patches/compare/v1.3.1...v1.3.2) (2026-08-18)
+
+### 🐛 Bug Fixes
+
+* **devcheck:** patch PairIP verifySignatureMatches instead of skipping VM ([a6da654](https://github.com/riky-dev/morphe-patches/commit/a6da654191db6e47497da63a057610615f0a87d7))
+
 ## [1.3.1](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.3.1) (2026-08-18)
 
 ### 🐛 Bug Fixes
