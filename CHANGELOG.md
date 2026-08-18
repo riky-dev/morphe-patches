@@ -1,3 +1,9 @@
+## [1.3.3](https://github.com/riky-dev/morphe-patches/compare/v1.3.2...v1.3.3) (2026-08-18)
+
+### 🐛 Bug Fixes
+
+* **devcheck:** remove unsupported DevCheck patches (PairIP native protection) ([2d5b744](https://github.com/riky-dev/morphe-patches/commit/2d5b744245a8e6294639159881b638f5ee8f54e8))
+
 ## [1.3.2](https://github.com/riky-dev/morphe-patches/compare/v1.3.1...v1.3.2) (2026-08-18)
 
 ### 🐛 Bug Fixes
