@@ -92,6 +92,7 @@ fi
 
 [[ -f "$MPP" ]] || die "patch bundle not found: $MPP (run build.sh first)"
 [[ -n "$APK" && -f "$APK" ]] || die "base APK not found (run extract_apk.sh or pass path)"
+APK="$(readlink -f "$APK")"
 
 if [[ "$ASSERT_MODE" == "config" ]]; then
   ASSERTIONS_JSON="$(config_verify_assertions "$APP_ID")"
@@ -146,8 +147,12 @@ fun main(args: Array<String>) {
     val mpp = File(args[0])
     val apk = File(args[1])
     val out = File(args[2])
-    val patches = loadPatchesFromJar(setOf(mpp))
-    println("Loaded ${patches.size} patch(es): ${patches.map { it.name }}")
+    val packageName = args[3]
+    val patches = loadPatchesFromJar(setOf(mpp)).filter { patch ->
+        patch.compatibility?.any { it.packageName == packageName } == true
+    }.toSet()
+    check(patches.isNotEmpty()) { "No patches found for package: $packageName" }
+    println("Loaded ${patches.size} patch(es) for $packageName: ${patches.map { it.name }}")
     val patcher = Patcher(
         PatcherConfig(apkFile = apk, temporaryFilesPath = File(out, "tmp"))
     )
@@ -175,7 +180,7 @@ EOF
 
 log "Applying patches..."
 cd "$WORK"
-"$ROOT_DIR/gradlew" -p "$WORK" run --args="$MPP $APK $WORK/out" --console=plain 2>&1 | tail -20
+"$ROOT_DIR/gradlew" -p "$WORK" run --args="$MPP $APK $WORK/out $APP_PACKAGE" --console=plain
 
 ASSERT_COUNT="$(python3 -c "import json,sys; print(len(json.loads(sys.argv[1])))" "$ASSERTIONS_JSON")"
 if [[ "$ASSERT_COUNT" == "0" ]]; then
