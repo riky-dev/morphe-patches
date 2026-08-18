@@ -11,3 +11,9 @@ verify:
     - file: defpackage/wj.java
       pattern: 'return true;'
       label: isPro
+    - file: com/pairip/SignatureCheck.java
+      pattern: 'Method not decompiled: com.pairip.SignatureCheck.verifyIntegrity'
+      label: bypassPairIpIntegrity
+    - file: com/pairip/VMRunner.java
+      pattern: 'DFQzzv4Rl5kZNZOE'
+      label: bypassPairIpStartup
