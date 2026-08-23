@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/riky-dev/morphe-patches/compare/v1.3.3...v1.4.0) (2026-08-23)
+
+### ✨ New Features
+
+* **komoot:** add unlock premium patch for v2026.34.2 ([a04dec7](https://github.com/riky-dev/morphe-patches/commit/a04dec76ba4435dd9c0093b0b5d0d92cdd8e7fc4))
+
 ## [1.3.3](https://github.com/riky-dev/morphe-patches/compare/v1.3.2...v1.3.3) (2026-08-18)
 
 ### 🐛 Bug Fixes
