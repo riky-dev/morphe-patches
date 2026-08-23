@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/riky-dev/morphe-patches/compare/v1.4.0...v1.5.0) (2026-08-23)
+
+### ✨ New Features
+
+* **komoot:** add unlock map regions patch ([1d8153b](https://github.com/riky-dev/morphe-patches/commit/1d8153b79a327fafec37063740e154ed30557805))
+
 ## [1.4.0](https://github.com/riky-dev/morphe-patches/compare/v1.3.3...v1.4.0) (2026-08-23)
 
 ### ✨ New Features
