@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/riky-dev/morphe-patches/compare/v1.6.0...v1.7.0) (2026-08-23)
+
+### ✨ New Features
+
+* **capcut:** bypass APK security toast after repatching ([4be1c5f](https://github.com/riky-dev/morphe-patches/commit/4be1c5f011c9dd238364039fdb1773387d4fe6b2))
+
 ## [1.6.0](https://github.com/riky-dev/morphe-patches/compare/v1.5.0...v1.6.0) (2026-08-23)
 
 ### ✨ New Features

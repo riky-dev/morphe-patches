@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-08-23T18:42:33",
-  "description": "## [1.6.0](https://github.com/riky-dev/morphe-patches/compare/v1.5.0...v1.6.0) (2026-08-23)\n\n### ✨ New Features\n\n* **capcut:** add Unlock Pro patch with export trailer removal ([4610cec](https://github.com/riky-dev/morphe-patches/commit/4610cecd5ce679cdea3bfff79585fd51a7af8b26))",
-  "download_url": "https://github.com/riky-dev/morphe-patches/releases/download/v1.6.0/patches-1.6.0.mpp",
+  "created_at": "2026-08-23T19:09:56",
+  "description": "## [1.7.0](https://github.com/riky-dev/morphe-patches/compare/v1.6.0...v1.7.0) (2026-08-23)\n\n### ✨ New Features\n\n* **capcut:** bypass APK security toast after repatching ([4be1c5f](https://github.com/riky-dev/morphe-patches/commit/4be1c5f011c9dd238364039fdb1773387d4fe6b2))",
+  "download_url": "https://github.com/riky-dev/morphe-patches/releases/download/v1.7.0/patches-1.7.0.mpp",
   "signature_download_url": "",
-  "version": "1.6.0"
+  "version": "1.7.0"
 }
