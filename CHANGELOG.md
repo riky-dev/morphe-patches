@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/riky-dev/morphe-patches/compare/v1.5.0...v1.6.0) (2026-08-23)
+
+### ✨ New Features
+
+* **capcut:** add Unlock Pro patch with export trailer removal ([4610cec](https://github.com/riky-dev/morphe-patches/commit/4610cecd5ce679cdea3bfff79585fd51a7af8b26))
+
 ## [1.5.0](https://github.com/riky-dev/morphe-patches/compare/v1.4.0...v1.5.0) (2026-08-23)
 
 ### ✨ New Features
