@@ -24,5 +24,10 @@ verify:
       pattern: 'const/4 p2, 0x0'
       label: WatermarkTrailerConfig trailer disabled
     - file: com/xt/retouch/baseui/JniToast.smali
-      pattern: 'return-void'
+      method: showApkError
+      pattern: '\.registers 3'
       label: JniToast showApkError bypass
+    - file: com/xt/retouch/baseui/JniToast$1.smali
+      method: run
+      pattern: '\.registers 4'
+      label: JniToast runnable bypass

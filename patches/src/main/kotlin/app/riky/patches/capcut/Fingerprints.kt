@@ -48,3 +48,11 @@ internal object JniToastShowApkErrorFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf("Landroid/content/Context;"),
 )
+
+internal object JniToastShowApkErrorRunnableFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/baseui/JniToast${'$'}1;",
+    name = "run",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "V",
+    parameters = listOf(),
+)

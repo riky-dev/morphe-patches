@@ -21,5 +21,14 @@ val bypassApkSecurityPatch = bytecodePatch(
                 return-void
             """,
         )
+
+        // Inner Runnable posted to the main looper; patch both entry points in case
+        // strip-fast leaves this class in a different dex from the outer class.
+        JniToastShowApkErrorRunnableFingerprint.method.addInstructions(
+            0,
+            """
+                return-void
+            """,
+        )
     }
 }
