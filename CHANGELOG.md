@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/riky-dev/morphe-patches/compare/v1.7.0...v1.7.1) (2026-08-23)
+
+### 🐛 Bug Fixes
+
+* **capcut:** patch JniToast runnable to suppress APK security toast ([bc5bd5c](https://github.com/riky-dev/morphe-patches/commit/bc5bd5ccdbc8cd8d0199c999b58351110df57404))
+
 ## [1.7.0](https://github.com/riky-dev/morphe-patches/compare/v1.6.0...v1.7.0) (2026-08-23)
 
 ### ✨ New Features
