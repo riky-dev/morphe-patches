@@ -40,3 +40,11 @@ internal object WatermarkTrailerConfigInitFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
     parameters = listOf("Z", "Z"),
 )
+
+internal object JniToastShowApkErrorFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/baseui/JniToast;",
+    name = "showApkError",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Landroid/content/Context;"),
+)

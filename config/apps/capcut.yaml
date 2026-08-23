@@ -23,3 +23,6 @@ verify:
     - file: com/lemon/lv/config/WatermarkTrailerConfig.smali
       pattern: 'const/4 p2, 0x0'
       label: WatermarkTrailerConfig trailer disabled
+    - file: com/xt/retouch/baseui/JniToast.smali
+      pattern: 'return-void'
+      label: JniToast showApkError bypass
