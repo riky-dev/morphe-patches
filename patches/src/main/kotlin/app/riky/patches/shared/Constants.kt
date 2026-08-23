@@ -21,6 +21,17 @@ object Constants {
         )
     )
 
+    // Komoot: https://apkpure.net/komoot-hike-bike-run/de.komoot.android
+    val COMPATIBILITY_KOMOOT = Compatibility(
+        name = "Komoot",
+        packageName = "de.komoot.android",
+        apkFileType = ApkFileType.APK,
+        appIconColor = 0xECEBB4,
+        targets = listOf(
+            AppTarget(version = "2026.34.2"),
+        ),
+    )
+
     // Electron: battery health info: https://apkpure.net/app/com.mahersafadi.electron
     val COMPATIBILITY_ELECTRON = Compatibility(
         name = "Electron: battery health info",
