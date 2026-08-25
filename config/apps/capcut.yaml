@@ -31,3 +31,31 @@ verify:
       method: run
       pattern: '\.registers 4'
       label: JniToast runnable bypass
+    - file: com/vega/main/update/VersionUpdateService.smali
+      method: a
+      pattern: 'return v0'
+      label: VersionUpdate shouldShow false
+    - file: com/vega/main/update/VersionUpdateService.smali
+      method: c
+      pattern: 'return-void'
+      label: VersionUpdate refresh no-op
+    - file: com/vega/main/update/VersionUpdateService.smali
+      method: e
+      pattern: 'return-void'
+      label: VersionUpdate showPopup no-op
+    - file: com/vega/infrastructure/util/NetworkUtils.smali
+      method: e
+      pattern: 'const/4 v0, 0x0'
+      label: Vega NetworkUtils offline spoof
+    - file: com/xt/retouch/util/NetworkUtils.smali
+      method: c
+      pattern: 'const/4 v0, 0x0'
+      label: Retouch NetworkUtils offline spoof
+    - file: com/bytedance/common/utility/NetworkUtils.smali
+      method: isNetworkAvailable
+      pattern: 'const/4 v0, 0x0'
+      label: Bytedance isNetworkAvailable offline spoof
+    - file: com/lm/components/utils/NetworkUtils.smali
+      method: b
+      pattern: 'const/4 v0, 0x0'
+      label: LM NetworkUtils offline spoof

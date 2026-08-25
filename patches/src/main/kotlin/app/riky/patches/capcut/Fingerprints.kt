@@ -56,3 +56,152 @@ internal object JniToastShowApkErrorRunnableFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf(),
 )
+
+/** Splash gate: true when cached remote update config applies to this OS. */
+internal object VersionUpdateShouldShowFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/update/VersionUpdateService;",
+    name = "a",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+/** Fetches / refreshes version_update remote popup config (needs network). */
+internal object VersionUpdateRefreshFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/update/VersionUpdateService;",
+    name = "c",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf(),
+)
+
+/** Shows the force/suggested update dialog from splash. */
+internal object VersionUpdateShowPopupFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/update/VersionUpdateService;",
+    name = "e",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Lcom/vega/ui/accomponent/AcComponentActivity;"),
+)
+
+// --- Connectivity spoof (NetworkUtils helpers) ---
+
+internal object VegaNetworkIsConnectedFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/infrastructure/util/NetworkUtils;",
+    name = "e",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+internal object VegaNetworkHasTransportFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/infrastructure/util/NetworkUtils;",
+    name = "f",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+internal object VegaNetworkIsWifiFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/infrastructure/util/NetworkUtils;",
+    name = "h",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+internal object VegaNetworkTypeFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/infrastructure/util/NetworkUtils;",
+    name = "d",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Lcom/vega/infrastructure/util/NetworkUtils${'$'}NetworkType;",
+    parameters = listOf(),
+)
+
+internal object RetouchNetworkIsConnectedFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/util/NetworkUtils;",
+    name = "c",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+internal object RetouchNetworkIsWifiFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/util/NetworkUtils;",
+    name = "d",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+internal object RetouchNetworkTypeFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/util/NetworkUtils;",
+    name = "b",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Lcom/xt/retouch/util/NetworkUtils${'$'}NetworkType;",
+    parameters = listOf(),
+)
+
+internal object BytedanceIsNetworkAvailableFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/common/utility/NetworkUtils;",
+    name = "isNetworkAvailable",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object BytedanceIsNetworkAvailableFastFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/common/utility/NetworkUtils;",
+    name = "isNetworkAvailableFast",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object BytedanceGetNetworkTypeFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/common/utility/NetworkUtils;",
+    name = "getNetworkType",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Lcom/bytedance/common/utility/NetworkUtils${'$'}NetworkType;",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object BytedanceIsWifiFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/common/utility/NetworkUtils;",
+    name = "isWifi",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object BytedanceIsWifiFastFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/common/utility/NetworkUtils;",
+    name = "isWifiFast",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object LmNetworkAnyConnectedFingerprint : Fingerprint(
+    definingClass = "Lcom/lm/components/utils/NetworkUtils;",
+    name = "a",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object LmNetworkIsAvailableFingerprint : Fingerprint(
+    definingClass = "Lcom/lm/components/utils/NetworkUtils;",
+    name = "b",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+internal object LmNetworkIsWifiFingerprint : Fingerprint(
+    definingClass = "Lcom/lm/components/utils/NetworkUtils;",
+    name = "c",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
