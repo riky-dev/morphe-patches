@@ -1,3 +1,9 @@
+## [1.8.1](https://github.com/riky-dev/morphe-patches/compare/v1.8.0...v1.8.1) (2026-08-25)
+
+### 🐛 Bug Fixes
+
+* **capcut:** replace NetworkUtils offline spoof with force-update kill ([8a92a71](https://github.com/riky-dev/morphe-patches/commit/8a92a715d9de8568c1f4b277229623b265858711))
+
 ## [1.8.0](https://github.com/riky-dev/morphe-patches/compare/v1.7.1...v1.8.0) (2026-08-25)
 
 ### ✨ New Features

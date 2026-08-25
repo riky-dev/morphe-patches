@@ -13,9 +13,9 @@ Click here to add these patches to Morphe: https://morphe.software/add-source?gi
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.8.0](https://github.com/riky-dev/morphe-patches/releases/tag/v1.8.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;8 patches total
+> **[v1.8.1](https://github.com/riky-dev/morphe-patches/releases/tag/v1.8.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
 <details open>
-<summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
+<summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -25,9 +25,7 @@ Click here to add these patches to Morphe: https://morphe.software/add-source?gi
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Bypass APK security check](#bypass-apk-security-check) | Disables the retouch SDK APK signature check that shows a toast when the app was repatched (e.g. after applying Morphe patches). The native check in libretouch_sdk.so still runs but its error UI is suppressed. |  |
-| [Disable all connectivity](#disable-all-connectivity) | Spoofs CapCut's NetworkUtils helpers so the app believes it is offline (same idea as airplane mode for gated features, update fetches that check connectivity, TTNet Retrofit gates, templates, cloud, etc.). Opt-in: breaks anything that needs the internet. Does not tear down sockets — native/cronet paths that skip these helpers may still reach the network. Prefer "Disable force update" if you only want to kill the version nag. |  |
-| [Disable force update](#disable-force-update) | Stops CapCut's remote force-update nag (same effect as going offline for that warning) without cutting network access. No-ops VersionUpdateService fetch, eligibility check, and splash dialog. Does not spoof connectivity — templates, effects, and cloud still need the internet. Login-time app-upgrade errors are separate and not covered here. |  |
+| [Disable all connectivity](#disable-all-connectivity) | Blocks CapCut's remote force-update / version-nag path (the part that goes away when you toggle airplane mode) without spoofing global NetworkUtils. Full offline spoofs abort opening a local video (draft check returns material authorization network fail and pops back to home). Templates, effects, and cloud still need a real network. Login-time app-upgrade errors are not covered. |  |
 | [Unlock Pro](#unlock-pro) | Spoofs client-side Pro/VIP status to unlock premium-gated effects, export options (watermark removal where VIP-gated), and retouch subscribe checks. Also disables watermark_trailer_config so the CapCut ending clip is not applied. ISubscribe.isVip is native and not patchable here. Server-verified features may still require a real subscription. |  |
 
 </details>
