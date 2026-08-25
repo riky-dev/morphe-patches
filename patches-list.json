@@ -1,10 +1,62 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "patches": [
     {
       "name": "Bypass APK security check",
       "description": "Disables the retouch SDK APK signature check that shows a toast when the app was repatched (e.g. after applying Morphe patches). The native check in libretouch_sdk.so still runs but its error UI is suppressed.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.lemon.lvoverseas",
+          "name": "CapCut",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#00C1CD",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "19.2.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Disable all connectivity",
+      "description": "Spoofs CapCut's NetworkUtils helpers so the app believes it is offline (same idea as airplane mode for gated features, update fetches that check connectivity, TTNet Retrofit gates, templates, cloud, etc.). Opt-in: breaks anything that needs the internet. Does not tear down sockets — native/cronet paths that skip these helpers may still reach the network. Prefer \"Disable force update\" if you only want to kill the version nag.",
+      "default": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.lemon.lvoverseas",
+          "name": "CapCut",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#00C1CD",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "19.2.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Disable force update",
+      "description": "Stops CapCut's remote force-update nag (same effect as going offline for that warning) without cutting network access. No-ops VersionUpdateService fetch, eligibility check, and splash dialog. Does not spoof connectivity — templates, effects, and cloud still need the internet. Login-time app-upgrade errors are separate and not covered here.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [

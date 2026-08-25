@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/riky-dev/morphe-patches/compare/v1.7.1...v1.8.0) (2026-08-25)
+
+### ✨ New Features
+
+* **capcut:** add disable force-update and connectivity patches ([5e1768e](https://github.com/riky-dev/morphe-patches/commit/5e1768e50e69cdec320a17440d1e6f2ff68de8fc))
+
 ## [1.7.1](https://github.com/riky-dev/morphe-patches/compare/v1.7.0...v1.7.1) (2026-08-23)
 
 ### 🐛 Bug Fixes
