@@ -3,32 +3,6 @@
   "version": "1.8.1",
   "patches": [
     {
-      "name": "Disable all connectivity",
-      "description": "Blocks CapCut's remote force-update / version-nag path (the part that goes away when you toggle airplane mode) without spoofing global NetworkUtils. Full offline spoofs abort opening a local video (draft check returns material authorization network fail and pops back to home). Templates, effects, and cloud still need a real network. Login-time app-upgrade errors are not covered.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.lemon.lvoverseas",
-          "name": "CapCut",
-          "description": null,
-          "apkFileType": "APK",
-          "appIconColor": "#00C1CD",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "19.2.0",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
       "name": "Hide ads",
       "description": "Spoofs premium/unlocked state to disable ad-gated behavior.",
       "default": true,
@@ -96,32 +70,6 @@
           "targets": [
             {
               "version": "2026.34.2",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Unlock Pro",
-      "description": "Spoofs client-side Pro/VIP status to unlock premium-gated effects, export options (watermark removal where VIP-gated), and retouch subscribe checks. Also disables watermark_trailer_config so the CapCut ending clip is not applied. ISubscribe.isVip is native and not patchable here. Server-verified features may still require a real subscription.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.lemon.lvoverseas",
-          "name": "CapCut",
-          "description": null,
-          "apkFileType": "APK",
-          "appIconColor": "#00C1CD",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "19.2.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
