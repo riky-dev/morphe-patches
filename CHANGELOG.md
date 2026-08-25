@@ -1,3 +1,9 @@
+## [1.8.2](https://github.com/riky-dev/morphe-patches/compare/v1.8.1...v1.8.2) (2026-08-25)
+
+### 🐛 Bug Fixes
+
+* remove CapCut patches ([8d7b38b](https://github.com/riky-dev/morphe-patches/commit/8d7b38ba87c63ba23d12f40e20c4c30ecdd0d265))
+
 ## [1.8.1](https://github.com/riky-dev/morphe-patches/compare/v1.8.0...v1.8.1) (2026-08-25)
 
 ### 🐛 Bug Fixes
