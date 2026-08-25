@@ -23,14 +23,6 @@ verify:
     - file: com/lemon/lv/config/WatermarkTrailerConfig.smali
       pattern: 'const/4 p2, 0x0'
       label: WatermarkTrailerConfig trailer disabled
-    - file: com/xt/retouch/baseui/JniToast.smali
-      method: showApkError
-      pattern: '\.registers 3'
-      label: JniToast showApkError bypass
-    - file: com/xt/retouch/baseui/JniToast$1.smali
-      method: run
-      pattern: '\.registers 4'
-      label: JniToast runnable bypass
     - file: com/vega/main/update/VersionUpdateService.smali
       method: a
       pattern: 'return v0'
@@ -43,19 +35,3 @@ verify:
       method: e
       pattern: 'return-void'
       label: VersionUpdate showPopup no-op
-    - file: com/vega/infrastructure/util/NetworkUtils.smali
-      method: e
-      pattern: 'const/4 v0, 0x0'
-      label: Vega NetworkUtils offline spoof
-    - file: com/xt/retouch/util/NetworkUtils.smali
-      method: c
-      pattern: 'const/4 v0, 0x0'
-      label: Retouch NetworkUtils offline spoof
-    - file: com/bytedance/common/utility/NetworkUtils.smali
-      method: isNetworkAvailable
-      pattern: 'const/4 v0, 0x0'
-      label: Bytedance isNetworkAvailable offline spoof
-    - file: com/lm/components/utils/NetworkUtils.smali
-      method: b
-      pattern: 'const/4 v0, 0x0'
-      label: LM NetworkUtils offline spoof
