@@ -1,14 +1,16 @@
-# 👋🧩 Riky's Morphe Patches
+# 👋🧩 riky's patches
 
 ## ❓ About
 
-Ad-removal and premium-unlock patches for Android apps, published as a Morphe patch bundle.
+Personal Morphe patch bundle (ad removal, unlocks, and experiments).
 
 This project is a fork of the [Morphe patches template](https://github.com/MorpheApp/morphe-patches-template) by the Morphe contributors, extended with additional patches and development tooling.
 
 ### How to use these patches
 
 Click here to add these patches to Morphe: https://morphe.software/add-source?github=riky-dev/morphe-patches
+
+Stable releases come from `main`. To try preview builds from `dev`, enable **pre-release** for this source in Morphe Manager.
 
 ## 🩹 Patches list
 
@@ -88,7 +90,7 @@ See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation
 
 ## 📜 License
 
-Riky's Morphe Patches are licensed under the [GNU General Public License v3.0](LICENSE).
+riky's patches are licensed under the [GNU General Public License v3.0](LICENSE).
 
 This project is based on the [Morphe patches template](https://github.com/MorpheApp/morphe-patches-template). Copyright (C) 2025 Morphe contributors. Modifications copyright (C) 2026 [riky-dev](https://github.com/riky-dev).
 
