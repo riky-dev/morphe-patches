@@ -282,6 +282,121 @@ internal object DiversionPCActivityOnCreateFingerprint : Fingerprint(
     parameters = listOf("Landroid/os/Bundle;")
 )
 
+internal object UserSubscribeInfoGetFlagFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/lv/clipmonetize/data/UserSubscribeInfo;",
+    name = "getFlag",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Z",
+    parameters = listOf()
+)
 
+internal object UserSubscribeInfoGetLevelFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/lv/clipmonetize/data/UserSubscribeInfo;",
+    name = "getLevel",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Ljava/lang/String;",
+    parameters = listOf()
+)
 
+internal object BaseMainActivityInitMainTab10InvokeFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/BaseMainActivity\$initMainTab\$10;",
+    name = "invoke",
+    returnType = "Ljava/lang/Object;",
+    parameters = listOf("Ljava/lang/Object;")
+)
 
+internal object AppLogInitFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "init",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Landroid/content/Context;", "Lcom/bytedance/applog/InitConfig;")
+)
+
+internal object AppLogOnEvent1Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEvent",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;")
+)
+
+internal object AppLogOnEvent2Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEvent",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;", "Ljava/lang/String;")
+)
+
+internal object AppLogOnEvent3Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEvent",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;", "Ljava/lang/String;", "Ljava/lang/String;", "J", "J")
+)
+
+internal object AppLogOnEvent4Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEvent",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;", "Ljava/lang/String;", "Ljava/lang/String;", "J", "J", "Lorg/json/JSONObject;")
+)
+
+internal object AppLogOnEventV31Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEventV3",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;")
+)
+
+internal object AppLogOnEventV32Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEventV3",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;", "Landroid/os/Bundle;")
+)
+
+internal object AppLogOnEventV33Fingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/applog/AppLog;",
+    name = "onEventV3",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;", "Lorg/json/JSONObject;")
+)
+
+internal object HeliosEnvImplInitFingerprint : Fingerprint(
+    definingClass = "Lcom/bytedance/helios/sdk/HeliosEnvImpl;",
+    name = "e",
+    returnType = "V",
+    parameters = listOf(
+        "Lcom/bytedance/pumbaa/monitor/adapter/MonitorServiceImpl\$init$1;",
+        "LX/3Dp;"
+    )
+)
+
+internal object AppsFlyerAnalyticsStartFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/launcher/report/AppsFlyerAnalytics;",
+    name = "f",
+    returnType = "V",
+    parameters = listOf("Landroid/app/Application;")
+)
+internal object ExportHighDefinitionConfigGetEnableFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/lv/config/ExportHighDefinitionConfig;",
+    name = "b",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Z",
+    parameters = listOf()
+)
+
+internal object SlowMotionSourceGetListFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/edit/speed/data/SlowMotionSource;",
+    name = "a",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Ljava/util/List;",
+    parameters = listOf()
+)

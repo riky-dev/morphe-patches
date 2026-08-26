@@ -29,6 +29,27 @@ verify:
     - file: com/lemon/vega/ug/ui/NoLoginDiversionPCActivity.smali
       pattern: 'NoLoginDiversionPCActivity;->finish\(\)V'
       label: NoLoginDiversionPCActivity suppressed
+    - file: com/lemon/lv/clipmonetize/data/UserSubscribeInfo.smali
+      pattern: 'const/4 v0, 0x1'
+      label: UserSubscribeInfo getFlag spoof
+    - file: com/lemon/lv/clipmonetize/data/UserSubscribeInfo.smali
+      pattern: 'const-string v0, "ssvip"'
+      label: UserSubscribeInfo getLevel spoof
+    - file: com/vega/main/BaseMainActivity$initMainTab$10.smali
+      pattern: 'ViewExtKt;->d\(Landroid/view/View;Z\)V'
+      label: BaseMainActivity initMainTab 10 invoke view gone
+    - file: com/bytedance/applog/AppLog.smali
+      pattern: '\.method public static init\(Landroid/content/Context;Lcom/bytedance/applog/InitConfig;\)V[\s\S]+?return-void'
+      label: AppLog init no-op
+    - file: com/lemon/lv/config/ExportHighDefinitionConfig.smali
+      pattern: '\.method public final b\(\)Z[\s\S]+?const/4 v0, 0x0\s+?return v0'
+      label: ExportHighDefinitionConfig getEnable returns false
+    - file: com/vega/edit/speed/data/SlowMotionSource.smali
+      pattern: '\.method public static a\(\)Ljava/util/List;[\s\S]+?return-object v4'
+      label: SlowMotionSource only returns Frame Blending
+
+
+
 
 
 

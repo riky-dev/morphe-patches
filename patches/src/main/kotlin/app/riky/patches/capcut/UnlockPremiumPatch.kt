@@ -266,5 +266,23 @@ val unlockPremiumPatch = bytecodePatch(
                 const/4 p2, 0x0
             """
         )
+
+        // Task 1: Cosmetic VIP Status Label ("Pro" / "SSVIP" in profile)
+        UserSubscribeInfoGetFlagFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x1
+                return v0
+            """
+        )
+
+        UserSubscribeInfoGetLevelFingerprint.method.addInstructions(
+            0,
+            """
+                const-string v0, "ssvip"
+                return-object v0
+            """
+        )
     }
 }
+
