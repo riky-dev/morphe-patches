@@ -33,7 +33,7 @@ Each target app has metadata in `config/apps/<app_id>.yaml`:
 
 Copy `config/apps/_template.yaml` for a new app. Config tells you **where things are**, not **what to patch**.
 
-Current apps: `meteo3b` (3B Meteo — reference implementation), `electron` (battery health info), `komoot`, `capcut` (local device testing; integrity after resign is flaky).
+Current apps: `meteo3b` (3B Meteo — reference implementation), `electron` (battery health info), `komoot`.
 
 ## Sandbox layout
 
