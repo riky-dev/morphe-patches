@@ -245,3 +245,43 @@ internal object VegaSubscribeImplQFingerprint : Fingerprint(
     returnType = "Z",
     parameters = listOf()
 )
+
+internal object UserInfoServiceVipStateFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/clipmonetize/biz/userinfoapi/UserInfoServiceServiceImpl;",
+    name = "f",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Lcom/lemon/lv/clipmonetize/data/VipState;",
+    parameters = listOf(),
+)
+
+internal object SubscribeFacadeIsSubscribedFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/account/api/subscribe/SubscribeFacade;",
+    name = "b",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf(),
+)
+
+internal object WatermarkTrailerConfigInitFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/lv/config/WatermarkTrailerConfig;",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf("Z", "Z"),
+)
+
+internal object NoLoginDiversionPCActivityOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/vega/ug/ui/NoLoginDiversionPCActivity;",
+    name = "onCreate",
+    returnType = "V",
+    parameters = listOf("Landroid/os/Bundle;")
+)
+
+internal object DiversionPCActivityOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/lemon/vega/ug/ui/DiversionPCActivity;",
+    name = "onCreate",
+    returnType = "V",
+    parameters = listOf("Landroid/os/Bundle;")
+)
+
+
+
+
