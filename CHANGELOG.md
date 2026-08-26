@@ -1,3 +1,9 @@
+## [1.1.0-dev.3](https://github.com/riky-dev/morphe-patches/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2026-08-26)
+
+### ✨ New Features
+
+* **capcut:** add cosmetic VIP status, telemetry suppression, hide AI Lab, and hide false hopes features ([d794440](https://github.com/riky-dev/morphe-patches/commit/d794440f36bd86481c3de00010c7d8820ae7ce77))
+
 ## [1.1.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-08-26)
 
 ### ✨ New Features
