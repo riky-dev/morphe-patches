@@ -1,0 +1,6 @@
+id: capcut
+package: com.lemon.lvoverseas
+display_name: CapCut
+apk_file_type: APK          # switch to XAPK/APKM if apkpure serves a split bundle
+apkpure_slug: capcut-video-editor
+analysis_dir: analysis/capcut
