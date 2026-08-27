@@ -1,3 +1,9 @@
+## [1.2.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.1.0...v1.2.0-dev.1) (2026-08-27)
+
+### ✨ New Features
+
+* add agent patch workflow framework ([a5a7520](https://github.com/riky-dev/morphe-patches/commit/a5a75206f04f6ba41d6be30d8804cd8ee54303e1))
+
 ## [1.1.0](https://github.com/riky-dev/morphe-patches/compare/v1.0.0...v1.1.0) (2026-08-26)
 
 ### ✨ New Features
