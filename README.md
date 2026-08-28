@@ -107,6 +107,32 @@ make build && make verify APP=meteo3b
 
 See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for more information.
 
+## 🚑 Troubleshooting
+
+Patches modify bytecode, but some failures happen **before** any patch runs — at APK install time. These are device/package-state issues, not patch bugs.
+
+### `INSTALL_FAILED_UPDATE_INCOMPATIBLE` (signatures do not match)
+
+The patched APK is signed with a different key than the CapCut already on the device. Uninstall the existing CapCut first, then install the patched build.
+
+### `INSTALL_FAILED_VERSION_DOWNGRADE` (update version code is older)
+
+Android reports a **per-user** install. A normal uninstall from your main profile can leave a copy in a work profile, an OEM "Dual app"/"App clone" (Samsung Dual Messenger, Xiaomi Dual apps, etc.), or as a pending uninstall — and that leftover still blocks the install.
+
+Fixes, easiest first:
+
+1. **Patch an APK whose version code is ≥ the one installed.** The patched output keeps the source's `versionCode`, so patching the newest CapCut can never be a downgrade. (The common advice to use the ~271 MB `com.lemon.lvoverseas_19.2.0-19201600_…` build is exactly this — pick a version ≥ what's on your device.)
+2. **Remove the leftover copy:**
+   - Turn off CapCut in your phone's *Dual apps / App twin / Parallel Apps* setting.
+   - For a work profile: Settings → *Passwords & accounts* (or *Work profile*) → remove the work profile.
+3. **From a PC (most reliable):** fully remove it for every user, then reinstall:
+   ```bash
+   adb shell pm list packages --all-users | grep -i lemon   # find the offending user id
+   adb uninstall --user 10 com.lemon.lvoverseas            # repeat for each user shown
+   adb uninstall com.lemon.lvoverseas
+   ```
+4. **Without a PC (no root):** install **Shizuku** + a shell app (e.g. **aShell** / **App Manager**), pair it via *Wireless debugging*, then run the same `pm uninstall --user <id> com.lemon.lvoverseas` command locally.
+
 ## 📜 License
 
 riky's patches are licensed under the [GNU General Public License v3.0](LICENSE).
