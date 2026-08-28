@@ -121,7 +121,7 @@ Android reports a **per-user** install. A normal uninstall from your main profil
 
 Fixes, easiest first:
 
-1. **Patch an APK whose version code is ≥ the one installed.** The patched output keeps the source's `versionCode`, so patching the newest CapCut can never be a downgrade. (The common advice to use the ~271 MB `com.lemon.lvoverseas_19.2.0-19201600_…` build is exactly this — pick a version ≥ what's on your device.)
+1. **Choose a CapCut APK that is newer than or equal to the one installed.** You don't edit anything — just select a CapCut APK file that's the same age or newer than what's on your phone as the patch source. The patched output keeps that APK's `versionCode`, so patching a newer CapCut can never be a downgrade. (The common advice to use the ~271 MB `com.lemon.lvoverseas_19.2.0-19201600_…` build is exactly this — pick a version ≥ what's on your device.)
 2. **Remove the leftover copy:**
    - Turn off CapCut in your phone's *Dual apps / App twin / Parallel Apps* setting.
    - For a work profile: Settings → *Passwords & accounts* (or *Work profile*) → remove the work profile.
