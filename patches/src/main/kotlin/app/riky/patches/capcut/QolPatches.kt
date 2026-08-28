@@ -89,6 +89,36 @@ val telemetrySuppressPatch = bytecodePatch(
 }
 
 @Suppress("unused")
+val hideTemplatesTabPatch = bytecodePatch(
+    name = "Hide Templates Tab",
+    description = "Removes the second bottom navigation tab ('Templates' / 'Modelli') by forcing its visibility observer to always hide the tab.",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        BaseMainActivityInitMainTab6InvokeFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v1, 0x0
+                const-class v0, Lcom/vega/ui/BadgeButton;
+                const v2, 0x7f093824
+                iget-object v3, p0, Lcom/vega/main/BaseMainActivity${'$'}initMainTab${'$'}6;->e:Lcom/vega/main/BaseMainActivity;
+                invoke-virtual {v3, v3, v2, v0}, Lcom/vega/ui/start/BaseInfraActivity;->findViewByIdCached(Lcom/kanyun/kace/AndroidExtensionsBase;ILjava/lang/Class;)Landroid/view/View;
+                move-result-object v5
+                invoke-static {v5, v1}, Lcom/vega/infrastructure/extensions/ViewExtKt;->d(Landroid/view/View;Z)V
+                const v2, 0x7f09384c
+                invoke-virtual {v3, v3, v2, v0}, Lcom/vega/ui/start/BaseInfraActivity;->findViewByIdCached(Lcom/kanyun/kace/AndroidExtensionsBase;ILjava/lang/Class;)Landroid/view/View;
+                move-result-object v5
+                invoke-static {v5, v1}, Lcom/vega/infrastructure/extensions/ViewExtKt;->d(Landroid/view/View;Z)V
+                sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+                return-object v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
 val hideAiLabTabPatch = bytecodePatch(
     name = "Hide AI Lab Tab",
     description = "Removes the third bottom navigation tab ('AI Lab' / 'Lab. IA') by forcing its visibility observer to always hide the tab.",
@@ -110,6 +140,25 @@ val hideAiLabTabPatch = bytecodePatch(
                 invoke-static {v5, v1}, Lcom/vega/infrastructure/extensions/ViewExtKt;->d(Landroid/view/View;Z)V
                 sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
                 return-object v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
+val hideAiSoundTabPatch = bytecodePatch(
+    name = "Hide AI Sounds Tab",
+    description = "Hides the duplicate 'Sounds' / 'Suoni' tab in the audio editor sound-effects panel (cloud-gated; causes network loops offline).",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        AISoundEffectAbBFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
             """
         )
     }

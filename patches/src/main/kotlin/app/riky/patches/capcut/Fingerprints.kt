@@ -298,11 +298,26 @@ internal object UserSubscribeInfoGetLevelFingerprint : Fingerprint(
     parameters = listOf()
 )
 
+internal object BaseMainActivityInitMainTab6InvokeFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/BaseMainActivity\$initMainTab\$6;",
+    name = "invoke",
+    returnType = "Ljava/lang/Object;",
+    parameters = listOf("Ljava/lang/Object;")
+)
+
 internal object BaseMainActivityInitMainTab10InvokeFingerprint : Fingerprint(
     definingClass = "Lcom/vega/main/BaseMainActivity\$initMainTab\$10;",
     name = "invoke",
     returnType = "Ljava/lang/Object;",
     parameters = listOf("Ljava/lang/Object;")
+)
+
+internal object AISoundEffectAbBFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/edit/base/aisound/config/AISoundEffectAb;",
+    name = "b",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Z",
+    parameters = listOf()
 )
 
 internal object AppLogInitFingerprint : Fingerprint(
