@@ -148,7 +148,7 @@ val hideAiLabTabPatch = bytecodePatch(
 @Suppress("unused")
 val hideAiSoundTabPatch = bytecodePatch(
     name = "Hide AI Sounds Tab",
-    description = "Hides the duplicate 'Sounds' / 'Suoni' tab in the audio editor sound-effects panel (cloud-gated; causes network loops offline).",
+    description = "Disables the cloud-gated AI sounds category inside the sound-effects panel.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_CAPCUT)
@@ -159,6 +159,44 @@ val hideAiSoundTabPatch = bytecodePatch(
             """
                 const/4 v0, 0x0
                 return v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
+val hideHomeBotBannerPatch = bytecodePatch(
+    name = "Hide Home Bottom Banner",
+    description = "Suppresses the promotional bottom banner on the home screen (e.g. Twitch / subscription promos).",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        HomeBotBannerFragmentOnCreateViewFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return-object v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
+val hideHomeTopBannerPatch = bytecodePatch(
+    name = "Hide Home Top Banner",
+    description = "Suppresses the promotional header banner on the home screen.",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        OverseaHomeTopBannerFragmentOnCreateViewFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return-object v0
             """
         )
     }

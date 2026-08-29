@@ -320,6 +320,28 @@ internal object AISoundEffectAbBFingerprint : Fingerprint(
     parameters = listOf()
 )
 
+internal object HomeBotBannerFragmentOnCreateViewFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/home/banner/HomeBotBannerFragment;",
+    name = "onCreateView",
+    returnType = "Landroid/view/View;",
+    parameters = listOf(
+        "Landroid/view/LayoutInflater;",
+        "Landroid/view/ViewGroup;",
+        "Landroid/os/Bundle;"
+    )
+)
+
+internal object OverseaHomeTopBannerFragmentOnCreateViewFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/home/topbar/OverseaHomeTopBannerFragment;",
+    name = "onCreateView",
+    returnType = "Landroid/view/View;",
+    parameters = listOf(
+        "Landroid/view/LayoutInflater;",
+        "Landroid/view/ViewGroup;",
+        "Landroid/os/Bundle;"
+    )
+)
+
 internal object AppLogInitFingerprint : Fingerprint(
     definingClass = "Lcom/bytedance/applog/AppLog;",
     name = "init",

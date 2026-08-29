@@ -47,6 +47,12 @@ verify:
     - file: com/vega/edit/base/aisound/config/AISoundEffectAb.smali
       pattern: '\.method public final b\(\)Z[\s\S]+?const/4 v0, 0x0\s+?return v0'
       label: AISoundEffectAb AI sounds tab disabled
+    - file: com/vega/main/home/banner/HomeBotBannerFragment.smali
+      pattern: '\.method public final onCreateView\(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;\)Landroid/view/View;[\s\S]+?const/4 v0, 0x0\s+?return-object v0'
+      label: HomeBotBannerFragment suppressed
+    - file: com/vega/main/home/topbar/OverseaHomeTopBannerFragment.smali
+      pattern: '\.method public final onCreateView\(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;\)Landroid/view/View;[\s\S]+?const/4 v0, 0x0\s+?return-object v0'
+      label: OverseaHomeTopBannerFragment suppressed
     - file: com/bytedance/applog/AppLog.smali
       pattern: '\.method public static init\(Landroid/content/Context;Lcom/bytedance/applog/InitConfig;\)V[\s\S]+?return-void'
       label: AppLog init no-op
