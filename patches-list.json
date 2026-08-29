@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.3.0-dev.1",
+  "version": "1.3.0",
   "patches": [
     {
       "name": "Hide AI Lab Tab",
@@ -109,6 +109,32 @@
     {
       "name": "Hide Home Top Banner",
       "description": "Suppresses the promotional header banner on the home screen.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.lemon.lvoverseas",
+          "name": "CapCut",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#00C4CC",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "19.2.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Hide Inbox Tab",
+      "description": "Removes the inbox / notifications bottom navigation tab by forcing its visibility observer to always hide the tab.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
