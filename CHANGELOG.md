@@ -1,3 +1,9 @@
+## [1.3.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v1.3.0-dev.1...v1.3.0-dev.2) (2026-08-29)
+
+### ✨ New Features
+
+* **capcut:** hide inbox notifications bottom nav tab ([de2d512](https://github.com/riky-dev/morphe-patches/commit/de2d512f29f305222ca0aca05c38540eb1f5bb81))
+
 ## [1.3.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.2.0...v1.3.0-dev.1) (2026-08-29)
 
 ### 🐛 Bug Fixes
