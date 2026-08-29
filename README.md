@@ -15,25 +15,27 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-
-> **[v1.2.0](https://github.com/riky-dev/morphe-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;9 patches total
-
+> **[v1.3.0-dev.1](https://github.com/riky-dev/morphe-patches/releases/tag/v1.3.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;13 patches total
 <details open>
-<summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
+<summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
 
 **🎯 Supported versions:**
 
 | 19.2.0 |
-| :----: |
+| :---: |
 
-| 💊&nbsp;Patch                                                       | 📜&nbsp;Description                                                                                                                           | ⚙️&nbsp;Options |
-| ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| [Hide AI Lab Tab](#hide-ai-lab-tab)                                 | Removes the third bottom navigation tab ('AI Lab' / 'Lab. IA') by forcing its visibility observer to always hide the tab.                     |                 |
-| [Hide False Hopes Features](#hide-false-hopes-features)             | Hides 'IA ultra HD' (Export Super Resolution) and 'Flusso ottico' (Slow Motion Optical Flow) options since they are cloud-gated.              |                 |
-| [Remove security notice](#remove-security-notice)                   | Suppresses the modified-build security notice by disabling the risk SDK dialog entry point and the isCracking flag writer.                    |                 |
-| [Suppress Telemetry and Trackers](#suppress-telemetry-and-trackers) | Disables background monitoring and analytics frameworks including ByteDance Helios, AppLog, and AppsFlyer.                                    |                 |
-| [Unlock Premium](#unlock-premium)                                   | Forces the VIP flag to true so premium features are unlocked client-side. Server-validated assets (cloud effects/templates) are not affected. |                 |
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Hide AI Lab Tab](#hide-ai-lab-tab) | Removes the third bottom navigation tab ('AI Lab' / 'Lab. IA') by forcing its visibility observer to always hide the tab. |  |
+| [Hide AI Sounds Tab](#hide-ai-sounds-tab) | Disables the cloud-gated AI sounds category inside the sound-effects panel. |  |
+| [Hide False Hopes Features](#hide-false-hopes-features) | Hides 'IA ultra HD' (Export Super Resolution) and 'Flusso ottico' (Slow Motion Optical Flow) options since they are cloud-gated. |  |
+| [Hide Home Bottom Banner](#hide-home-bottom-banner) | Suppresses the promotional bottom banner on the home screen (e.g. Twitch / subscription promos). |  |
+| [Hide Home Top Banner](#hide-home-top-banner) | Suppresses the promotional header banner on the home screen. |  |
+| [Hide Templates Tab](#hide-templates-tab) | Removes the second bottom navigation tab ('Templates' / 'Modelli') by forcing its visibility observer to always hide the tab. |  |
+| [Remove security notice](#remove-security-notice) | Suppresses the modified-build security notice by disabling the risk SDK dialog entry point and the isCracking flag writer. |  |
+| [Suppress Telemetry and Trackers](#suppress-telemetry-and-trackers) | Disables background monitoring and analytics frameworks including ByteDance Helios, AppLog, and AppsFlyer. |  |
+| [Unlock Premium](#unlock-premium) | Forces the VIP flag to true so premium features are unlocked client-side. Server-validated assets (cloud effects/templates) are not affected. |  |
 
 </details>
 
@@ -46,9 +48,9 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 | 3.0.3 |
 | :---: |
 
-| 💊&nbsp;Patch         | 📜&nbsp;Description                                         | ⚙️&nbsp;Options |
-| --------------------- | ----------------------------------------------------------- | --------------- |
-| [Hide ads](#hide-ads) | Spoofs premium/unlocked state to disable ad-gated behavior. |                 |
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Hide ads](#hide-ads) | Spoofs premium/unlocked state to disable ad-gated behavior. |  |
 
 </details>
 
@@ -59,11 +61,11 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 **🎯 Supported versions:**
 
 | 4.9.15 |
-| :----: |
+| :---: |
 
-| 💊&nbsp;Patch         | 📜&nbsp;Description                                                              | ⚙️&nbsp;Options |
-| --------------------- | -------------------------------------------------------------------------------- | --------------- |
-| [Hide ads](#hide-ads) | Removes banner, native, cover and interstitial ads and unlocks premium features. |                 |
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Hide ads](#hide-ads) | Removes banner, native, cover and interstitial ads and unlocks premium features. |  |
 
 </details>
 
@@ -74,12 +76,12 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 **🎯 Supported versions:**
 
 | 2026.34.2 |
-| :-------: |
+| :---: |
 
-| 💊&nbsp;Patch                                       | 📜&nbsp;Description                                                                                                                                                                                                                                                  | ⚙️&nbsp;Options |
-| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| [Unlock Premium features](#unlock-premium-features) | Unlock Premium features. Some features are not possible to patch (server sided), such as saving a multi-days hike.                                                                                                                                                   |                 |
-| [Unlock map regions](#unlock-map-regions)           | Spoof Komoot Maps ownership client-side (world pack / owned regions in shop and offline UI). Server-side limits may still apply: offline tile download auth, sync overwriting local state, and Play receipt validation. Does not replace a real Play Store purchase. |                 |
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Unlock Premium features](#unlock-premium-features) | Unlock Premium features. Some features are not possible to patch (server sided), such as saving a multi-days hike. |  |
+| [Unlock map regions](#unlock-map-regions) | Spoof Komoot Maps ownership client-side (world pack / owned regions in shop and offline UI). Server-side limits may still apply: offline tile download auth, sync overwriting local state, and Play receipt validation. Does not replace a real Play Store purchase. |  |
 
 </details>
 
