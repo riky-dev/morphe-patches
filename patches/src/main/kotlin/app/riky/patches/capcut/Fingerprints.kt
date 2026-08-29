@@ -305,6 +305,13 @@ internal object BaseMainActivityInitMainTab6InvokeFingerprint : Fingerprint(
     parameters = listOf("Ljava/lang/Object;")
 )
 
+internal object BaseMainActivityInitMainTab7InvokeFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/BaseMainActivity\$initMainTab\$7;",
+    name = "invoke",
+    returnType = "Ljava/lang/Object;",
+    parameters = listOf("Ljava/lang/Object;")
+)
+
 internal object BaseMainActivityInitMainTab10InvokeFingerprint : Fingerprint(
     definingClass = "Lcom/vega/main/BaseMainActivity\$initMainTab\$10;",
     name = "invoke",

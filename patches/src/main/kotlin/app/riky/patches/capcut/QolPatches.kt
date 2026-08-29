@@ -119,6 +119,32 @@ val hideTemplatesTabPatch = bytecodePatch(
 }
 
 @Suppress("unused")
+val hideInboxTabPatch = bytecodePatch(
+    name = "Hide Inbox Tab",
+    description = "Removes the inbox / notifications bottom navigation tab by forcing its visibility observer to always hide the tab.",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        BaseMainActivityInitMainTab7InvokeFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v1, 0x0
+                const-class v0, Lcom/vega/ui/BadgeButton;
+                const v2, 0x7f093842
+                iget-object v3, p0, Lcom/vega/main/BaseMainActivity${'$'}initMainTab${'$'}7;->e:Lcom/vega/main/BaseMainActivity;
+                invoke-virtual {v3, v3, v2, v0}, Lcom/vega/ui/start/BaseInfraActivity;->findViewByIdCached(Lcom/kanyun/kace/AndroidExtensionsBase;ILjava/lang/Class;)Landroid/view/View;
+                move-result-object v5
+                invoke-static {v5, v1}, Lcom/vega/infrastructure/extensions/ViewExtKt;->d(Landroid/view/View;Z)V
+                sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+                return-object v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
 val hideAiLabTabPatch = bytecodePatch(
     name = "Hide AI Lab Tab",
     description = "Removes the third bottom navigation tab ('AI Lab' / 'Lab. IA') by forcing its visibility observer to always hide the tab.",

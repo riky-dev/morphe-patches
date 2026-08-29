@@ -41,6 +41,9 @@ verify:
     - file: com/vega/main/BaseMainActivity$initMainTab$6.smali
       pattern: 'const v2, 0x7f09384c'
       label: BaseMainActivity initMainTab 6 template tab hidden
+    - file: com/vega/main/BaseMainActivity$initMainTab$7.smali
+      pattern: 'const v1, 0x7f093842'
+      label: BaseMainActivity initMainTab 7 inbox tab hidden
     - file: com/vega/main/BaseMainActivity$initMainTab$10.smali
       pattern: 'ViewExtKt;->d\(Landroid/view/View;Z\)V'
       label: BaseMainActivity initMainTab 10 invoke view gone
