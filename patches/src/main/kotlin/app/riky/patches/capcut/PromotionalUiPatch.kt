@@ -124,38 +124,43 @@ val hidePromotionalUiPatch = bytecodePatch(
                 move-result-object v0
                 invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
                 move-result-object v0
-                if-eqz v0, :cc_skip
+                if-eqz v0, :cc_web_skip
                 invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
                 move-result-object v0
-                
+
+                const-string v1, "image_lynx_global_unsafe_pkg_modal"
+                invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+                move-result v2
+                if-nez v2, :cc_web_finish
+
                 const-string v1, "image_lynx_promotion_desktop"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
+                if-nez v2, :cc_web_finish
 
                 const-string v1, "image_lynx_subscription_free_trial_gift_modal"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
+                if-nez v2, :cc_web_finish
 
                 const-string v1, "image_lynx_ad_after_export_modal"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
+                if-nez v2, :cc_web_finish
 
                 const-string v1, "image_lynx_ad_intercept_modal"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
-                
-                goto :cc_skip
-                
-                :cc_finish
+                if-nez v2, :cc_web_finish
+
+                goto :cc_web_skip
+
+                :cc_web_finish
                 invoke-super/range {p0..p1}, Lcom/vega/web/WebBaseActivity;->onCreate(Landroid/os/Bundle;)V
                 invoke-virtual/range {p0}, Lcom/vega/web/WebActivity;->finish()V
                 return-void
-                
-                :cc_skip
+
+                :cc_web_skip
             """
         )
 
@@ -166,38 +171,43 @@ val hidePromotionalUiPatch = bytecodePatch(
                 move-result-object v0
                 invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
                 move-result-object v0
-                if-eqz v0, :cc_skip
+                if-eqz v0, :cc_lynx_skip
                 invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
                 move-result-object v0
-                
+
+                const-string v1, "image_lynx_global_unsafe_pkg_modal"
+                invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+                move-result v2
+                if-nez v2, :cc_lynx_finish
+
                 const-string v1, "image_lynx_promotion_desktop"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
+                if-nez v2, :cc_lynx_finish
 
                 const-string v1, "image_lynx_subscription_free_trial_gift_modal"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
+                if-nez v2, :cc_lynx_finish
 
                 const-string v1, "image_lynx_ad_after_export_modal"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
+                if-nez v2, :cc_lynx_finish
 
                 const-string v1, "image_lynx_ad_intercept_modal"
                 invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
                 move-result v2
-                if-eqz v2, :cc_finish
-                
-                goto :cc_skip
-                
-                :cc_finish
+                if-nez v2, :cc_lynx_finish
+
+                goto :cc_lynx_skip
+
+                :cc_lynx_finish
                 invoke-super/range {p0..p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
                 invoke-virtual/range {p0}, Lcom/vega/main/LynxActivity;->finish()V
                 return-void
-                
-                :cc_skip
+
+                :cc_lynx_skip
             """
         )
 

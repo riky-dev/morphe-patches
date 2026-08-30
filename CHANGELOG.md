@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.0...v1.4.1) (2026-08-30)
+
+### 🐛 Bug Fixes
+
+* **capcut:** prevent TransLynxActivity crash from duplicate onCreate patches ([1b27804](https://github.com/riky-dev/morphe-patches/commit/1b27804fb6f5cc68ebc1e8381970fe3341ca7eee))
+
 ## [1.4.0](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.4.0) (2026-08-30)
 
 ### ✨ New Features
