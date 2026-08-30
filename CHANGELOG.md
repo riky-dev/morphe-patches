@@ -1,4 +1,4 @@
-## [1.4.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-08-30)
+## [1.4.0](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.4.0) (2026-08-30)
 
 ### ✨ New Features
 

@@ -1,7 +1,7 @@
 {
   "created_at": "2026-08-30T09:12:08",
-  "description": "## [1.4.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-08-30)\n\n### ✨ New Features\n\n* **capcut:** hide export promos, home hero titles, and Pro badges ([b74c8cf](https://github.com/riky-dev/morphe-patches/commit/b74c8cfd7a75009cec129d1ce7dc0f4abe181e68))\n* **capcut:** hide export smart frame interpolation option ([a0f15b9](https://github.com/riky-dev/morphe-patches/commit/a0f15b9b28bcde00f884e349c837327a9e54ec87))\n* **capcut:** hide home subscription chip and block paywall ([e1a6741](https://github.com/riky-dev/morphe-patches/commit/e1a674106450380d7add589ae799acd23db24b35))",
-  "download_url": "https://github.com/riky-dev/morphe-patches/releases/download/v1.4.0-dev.1/patches-1.4.0-dev.1.mpp",
+  "description": "## [1.4.0](https://github.com/riky-dev/morphe-patches/compare/v1.3.0...v1.4.0) (2026-08-30)\n\n### ✨ New Features\n\n* **capcut:** hide export promos, home hero titles, and Pro badges ([b74c8cf](https://github.com/riky-dev/morphe-patches/commit/b74c8cfd7a75009cec129d1ce7dc0f4abe181e68))\n* **capcut:** hide export smart frame interpolation option ([a0f15b9](https://github.com/riky-dev/morphe-patches/commit/a0f15b9b28bcde00f884e349c837327a9e54ec87))\n* **capcut:** hide home subscription chip and block paywall ([e1a6741](https://github.com/riky-dev/morphe-patches/commit/e1a674106450380d7add589ae799acd23db24b35))",
+  "download_url": "https://github.com/riky-dev/morphe-patches/releases/download/v1.4.0/patches-1.4.0.mpp",
   "signature_download_url": "",
-  "version": "1.4.0-dev.1"
+  "version": "1.4.0"
 }
