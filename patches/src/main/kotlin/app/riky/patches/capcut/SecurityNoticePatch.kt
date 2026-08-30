@@ -27,51 +27,5 @@ val securityNoticePatch = bytecodePatch(
                 return v0
             """
         )
-
-        WebActivityOnCreateFingerprint.method.addInstructions(
-            0,
-            """
-                invoke-virtual/range {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-                move-result-object v0
-                invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-                move-result-object v0
-                if-eqz v0, :cc_skip
-                invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
-                move-result-object v0
-                const-string v1, "image_lynx_global_unsafe_pkg_modal"
-                invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-                move-result v2
-                if-eqz v2, :cc_finish
-                goto :cc_skip
-                :cc_finish
-                invoke-super/range {p0..p1}, Lcom/vega/web/WebBaseActivity;->onCreate(Landroid/os/Bundle;)V
-                invoke-virtual/range {p0}, Lcom/vega/web/WebActivity;->finish()V
-                return-void
-                :cc_skip
-            """
-        )
-
-        LynxActivityOnCreateFingerprint.method.addInstructions(
-            0,
-            """
-                invoke-virtual/range {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-                move-result-object v0
-                invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-                move-result-object v0
-                if-eqz v0, :cc_skip
-                invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
-                move-result-object v0
-                const-string v1, "image_lynx_global_unsafe_pkg_modal"
-                invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-                move-result v2
-                if-eqz v2, :cc_finish
-                goto :cc_skip
-                :cc_finish
-                invoke-super/range {p0..p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
-                invoke-virtual/range {p0}, Lcom/vega/main/LynxActivity;->finish()V
-                return-void
-                :cc_skip
-            """
-        )
     }
 }
