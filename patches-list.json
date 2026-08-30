@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.3.0-dev.2",
+  "version": "1.2.0",
   "patches": [
     {
       "name": "Hide AI Lab Tab",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Hide Inbox Tab",
-      "description": "Removes the inbox / notifications bottom navigation tab by forcing its visibility observer to always hide the tab.",
+      "description": "Removes the inbox / notifications bottom navigation tab ('Inbox' / 'Posta in arrivo') by forcing its visibility observer to always hide the tab.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -237,7 +237,7 @@
       "options": []
     },
     {
-      "name": "Remove security notice",
+      "name": "Remove Security Notice",
       "description": "Suppresses the modified-build security notice by disabling the risk SDK dialog entry point and the isCracking flag writer.",
       "default": true,
       "dependencies": [],
