@@ -305,3 +305,107 @@ val hideFalseHopesPatch = bytecodePatch(
     }
 }
 
+@Suppress("unused")
+val hideExportPromosPatch = bytecodePatch(
+    name = "Hide Export Promos",
+    description = "Suppresses post-export promotional carousel and export campaign join promos.",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        BottomBannerHelperIsEnabledFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
+            """
+        )
+
+        BottomBannerHelperShowFingerprint.method.addInstructions(
+            0,
+            """
+                return-void
+            """
+        )
+
+        ExportCampaignEnableConfigIsEnabledFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
+            """
+        )
+
+        PcGuideBannerOptEntranceAbIsEnabledFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
+            """
+        )
+
+        ResourcePositionAreaInitFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                invoke-static {p1, v0}, Lcom/vega/infrastructure/extensions/ViewExtKt;->d(Landroid/view/View;Z)V
+            """
+        )
+
+        ResourcePositionAreaLoadResourceFingerprint.method.addInstructions(
+            0,
+            """
+                sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+                return-object v0
+            """
+        )
+
+        ImageResourcePositionAreaLoadResourceFingerprint.method.addInstructions(
+            0,
+            """
+                sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+                return-object v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
+val hideHomeHeroPromosPatch = bytecodePatch(
+    name = "Hide Home Hero Promos",
+    description = "Disables server-driven home hero promo titles (e.g. Esprimi la tua vibe / Prova gli stili IA).",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        HomeBackgroundHelperIsEnabledFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
+            """
+        )
+    }
+}
+
+@Suppress("unused")
+val hideProBadgesPatch = bytecodePatch(
+    name = "Hide Pro Badges",
+    description = "Suppresses Pro/SSVIP diamonds on BusinessMarkView (e.g. Riduci rumore in volume panel).",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        BusinessMarkViewRefreshFingerprint.method.addInstructions(
+            0,
+            """
+                invoke-static {p0}, Lcom/vega/infrastructure/extensions/ViewExtKt;->b(Landroid/view/View;)V
+                return-void
+            """
+        )
+    }
+}
+
