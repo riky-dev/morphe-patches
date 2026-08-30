@@ -229,9 +229,37 @@ val hideHomeTopBannerPatch = bytecodePatch(
 }
 
 @Suppress("unused")
+val hideSubscriptionUiPatch = bytecodePatch(
+    name = "Hide Subscription UI",
+    description = "Hides the home free-trial chip (SubscribeImpl.i) and blocks the ComposeSubscribeActivity paywall.",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_CAPCUT)
+
+    execute {
+        VegaSubscribeImplIFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
+            """
+        )
+
+        ComposeSubscribeActivityOnCreateFingerprint.method.addInstructions(
+            0,
+            """
+                invoke-super/range {p0..p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
+                invoke-virtual/range {p0}, Lcom/vega/subscription/widget/ComposeSubscribeActivity;->finish()V
+                return-void
+            """
+        )
+    }
+}
+
+@Suppress("unused")
 val hideFalseHopesPatch = bytecodePatch(
     name = "Hide False Hopes Features",
-    description = "Hides 'IA ultra HD' (Export Super Resolution) and 'Flusso ottico' (Slow Motion Optical Flow) options since they are cloud-gated.",
+    description = "Hides 'IA ultra HD' (Export Super Resolution) and slow-motion optical flow options since they are cloud-gated.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_CAPCUT)
@@ -265,6 +293,7 @@ val hideFalseHopesPatch = bytecodePatch(
                 return-object v4
             """
         )
+
     }
 }
 

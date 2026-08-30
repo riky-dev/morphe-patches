@@ -449,3 +449,11 @@ internal object SlowMotionSourceGetListFingerprint : Fingerprint(
     returnType = "Ljava/util/List;",
     parameters = listOf()
 )
+
+internal object ComposeSubscribeActivityOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/subscription/widget/ComposeSubscribeActivity;",
+    name = "onCreate",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "V",
+    parameters = listOf("Landroid/os/Bundle;")
+)

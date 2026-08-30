@@ -68,7 +68,12 @@ verify:
     - file: com/bytedance/helios/sdk/HeliosEnvImpl.smali
       pattern: '\.method public final e\(Lcom/bytedance/pumbaa/monitor/adapter/MonitorServiceImpl\$init\$1;LX/[\s\S]+?return-void'
       label: HeliosEnvImpl init no-op (telemetry suppressed)
-
+    - file: com/vega/subscribe/SubscribeImpl.smali
+      pattern: '\.method public final i\(\)Z[\s\S]+?const/4 v0, 0x0\s+?return v0'
+      label: SubscribeImpl canFreeTrial returns false
+    - file: com/vega/subscription/widget/ComposeSubscribeActivity.smali
+      pattern: 'ComposeSubscribeActivity;->finish\(\)V'
+      label: ComposeSubscribeActivity suppressed
 
 
 
