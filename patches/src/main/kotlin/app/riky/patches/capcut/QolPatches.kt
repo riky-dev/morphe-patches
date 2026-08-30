@@ -259,7 +259,7 @@ val hideSubscriptionUiPatch = bytecodePatch(
 @Suppress("unused")
 val hideFalseHopesPatch = bytecodePatch(
     name = "Hide False Hopes Features",
-    description = "Hides 'IA ultra HD' (Export Super Resolution) and slow-motion optical flow options since they are cloud-gated.",
+    description = "Hides cloud-gated export options: super resolution, slow-motion optical flow, and export smart frame interpolation.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_CAPCUT)
@@ -294,6 +294,14 @@ val hideFalseHopesPatch = bytecodePatch(
             """
         )
 
+        // Hide export smart frame interpolation entry (SmartCompleteFramePresenter gate)
+        SmartCompleteFrameUtilIsEntryVisibleFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return v0
+            """
+        )
     }
 }
 

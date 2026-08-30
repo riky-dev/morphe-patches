@@ -74,6 +74,9 @@ verify:
     - file: com/vega/subscription/widget/ComposeSubscribeActivity.smali
       pattern: 'ComposeSubscribeActivity;->finish\(\)V'
       label: ComposeSubscribeActivity suppressed
+    - file: com/vega/edit/utils/SmartCompleteFrameUtil.smali
+      pattern: '\.method public static e\(\)Z[\s\S]+?const/4 v0, 0x0\s+?return v0'
+      label: Export smart frame interpolation entry hidden
 
 
 

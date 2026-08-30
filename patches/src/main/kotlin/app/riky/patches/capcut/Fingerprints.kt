@@ -450,6 +450,14 @@ internal object SlowMotionSourceGetListFingerprint : Fingerprint(
     parameters = listOf()
 )
 
+internal object SmartCompleteFrameUtilIsEntryVisibleFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/edit/utils/SmartCompleteFrameUtil;",
+    name = "e",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "Z",
+    parameters = listOf()
+)
+
 internal object ComposeSubscribeActivityOnCreateFingerprint : Fingerprint(
     definingClass = "Lcom/vega/subscription/widget/ComposeSubscribeActivity;",
     name = "onCreate",
