@@ -1,3 +1,9 @@
+## [1.4.2-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.1...v1.4.2-dev.1) (2026-09-08)
+
+### 🚀 Updated App Support
+
+* 3BMeteo target version 4.9.15 → 4.9.16 ([3b62fd8](https://github.com/riky-dev/morphe-patches/commit/3b62fd88cfdca2c47cb31fb3d2e682f050289d3f))
+
 ## [1.4.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.0...v1.4.1) (2026-08-30)
 
 ### 🐛 Bug Fixes
