@@ -1,3 +1,9 @@
+## [1.4.2-dev.3](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.2...v1.4.2-dev.3) (2026-09-17)
+
+### 🐛 Bug Fixes
+
+* **capcut:** update Simplify Navigation tab IDs for 19.6.0 ([c4d7d37](https://github.com/riky-dev/morphe-patches/commit/c4d7d3728c3ba1d7bbccace765f3c9130a79ae7f))
+
 ## [1.4.2-dev.2](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.1...v1.4.2-dev.2) (2026-09-17)
 
 ### 🐛 Bug Fixes
