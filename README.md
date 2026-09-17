@@ -15,21 +15,21 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.4.2-dev.1](https://github.com/riky-dev/morphe-patches/releases/tag/v1.4.2-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
+> **[v1.4.2-dev.2](https://github.com/riky-dev/morphe-patches/releases/tag/v1.4.2-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
 <details open>
 <summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
 <br>
 
 **🎯 Supported versions:**
 
-| 19.2.0 |
-| :---: |
+| 19.2.0 | 19.6.0 |
+| :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Hide Promotional UI](#hide-promotional-ui) | Suppresses home banners, export promos, subscription paywalls, Pro badges, Lynx promo modals, and PC diversion popups. |  |
 | [Hide Unavailable Features](#hide-unavailable-features) | Hides cloud-gated editor options that won't work offline: AI sounds, super resolution, optical flow, and smart frame interpolation. |  |
-| [Remove Security Notice](#remove-security-notice) | Suppresses the modified-build security notice by disabling the risk SDK dialog entry point and the isCracking flag writer. |  |
+| [Remove Security Notice](#remove-security-notice) | Suppresses modified-build security notices and geo-gated force-update blocks: stubs the native CrackingInterceptor, risk SDK dialog entry, and VersionUpdateService force popup. Server IP policy may still limit cloud assets. |  |
 | [Simplify Navigation](#simplify-navigation) | Removes the Templates, Inbox, and AI Lab bottom navigation tabs. |  |
 | [Suppress Telemetry](#suppress-telemetry) | Disables background monitoring and analytics frameworks including ByteDance Helios, AppLog, and AppsFlyer. |  |
 | [Unlock Premium](#unlock-premium) | Forces the VIP flag to true so premium features are unlocked client-side. Server-validated assets (cloud effects/templates) are not affected. |  |

@@ -1,3 +1,9 @@
+## [1.4.2-dev.2](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.1...v1.4.2-dev.2) (2026-09-17)
+
+### 🐛 Bug Fixes
+
+* **capcut:** harden security notice for geo-gated crack/force-update ([c92aaa8](https://github.com/riky-dev/morphe-patches/commit/c92aaa8457af0bc744a812e35a04a001bab6c1e5))
+
 ## [1.4.2-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.1...v1.4.2-dev.1) (2026-09-08)
 
 ### 🚀 Updated App Support
