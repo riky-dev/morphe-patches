@@ -41,6 +41,52 @@ internal object CrackingWriteFingerprint : Fingerprint(
     parameters = listOf("I")
 )
 
+// Native HTTP interceptor that inspects server `ret` / risk responses and can
+// kill the session or invoke showGlobalSecurityDialog. Replaced with a
+// pass-through so Korea/non-EU integrity responses cannot block the client.
+internal object CrackingInterceptFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/launcher/network/interceptors/CrackingInterceptor;",
+    name = "intercept",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL, AccessFlags.NATIVE),
+    returnType = "Lcom/bytedance/retrofit2/SsResponse;",
+    parameters = listOf("Lcom/bytedance/retrofit2/intercept/Interceptor\$Chain;")
+)
+
+// Native helper invoked from intercept to surface the security overlay.
+internal object CrackingNativeDialogFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/launcher/network/interceptors/CrackingInterceptor;",
+    name = "d",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL, AccessFlags.NATIVE),
+    returnType = "V",
+    parameters = listOf("Ljava/lang/String;")
+)
+
+// Retouch module twin — pure Java, throws / redirects on crack ret codes.
+internal object RetouchCrackingInterceptFingerprint : Fingerprint(
+    definingClass = "Lcom/xt/retouch/applauncher/core/interceptor/CrackingInterceptor;",
+    name = "intercept",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Lcom/bytedance/retrofit2/SsResponse;",
+    parameters = listOf("Lcom/bytedance/retrofit2/intercept/Interceptor\$Chain;")
+)
+
+// Remote-config gate for the force-update popup (geo-sensitive).
+internal object VersionUpdateShouldShowFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/update/VersionUpdateService;",
+    name = "a",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Z",
+    parameters = listOf()
+)
+
+internal object VersionUpdateShowPopupFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/main/update/VersionUpdateService;",
+    name = "e",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    returnType = "V",
+    parameters = listOf("Lcom/vega/ui/accomponent/AcComponentActivity;")
+)
+
 // Entry point of the ByteDance risk SDK that shows the VerifyDialog (a WebView
 // rendering the server's "app is modified / not official" notice). Returning
 // true immediately prevents the dialog/callback chain from ever launching it.

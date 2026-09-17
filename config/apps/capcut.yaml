@@ -5,6 +5,12 @@ apk_file_type: APK          # switch to XAPK/APKM if apkpure serves a split bund
 apkpure_slug: capcut-video-editor
 analysis_dir: analysis/capcut
 
+# CapCut is huge — this host is ~16GB RAM; keep heap modest.
+decompile:
+  jadx_max_heap: 4g
+  jadx_threads: 1
+  jadx_no_res: true
+
 verify:
   apk: analysis/capcut/extract/com.lemon.lvoverseas.apk
   smali_assertions:
@@ -42,7 +48,7 @@ verify:
       pattern: 'const v2, 0x7f09384c'
       label: BaseMainActivity initMainTab 6 template tab hidden
     - file: com/vega/main/BaseMainActivity$initMainTab$7.smali
-      pattern: 'const v1, 0x7f093842'
+      pattern: 'const v2, 0x7f093842'
       label: BaseMainActivity initMainTab 7 inbox tab hidden
     - file: com/vega/main/BaseMainActivity$initMainTab$10.smali
       pattern: 'ViewExtKt;->d\(Landroid/view/View;Z\)V'
@@ -101,6 +107,12 @@ verify:
     - file: com/vega/subscriptionapi/swidget/BusinessMarkView.smali
       pattern: '\.method public j\(Z\)V[\s\S]+?ViewExtKt;->b\(Landroid/view/View;\)V[\s\S]+?return-void'
       label: BusinessMarkView Pro badge hidden
+    - file: com/vega/launcher/network/interceptors/CrackingInterceptor.smali
+      pattern: '\.method public final intercept\(Lcom/bytedance/retrofit2/intercept/Interceptor\$Chain;\)Lcom/bytedance/retrofit2/SsResponse;[\s\S]+?proceed\(Lcom/bytedance/retrofit2/client/Request;\)'
+      label: CrackingInterceptor intercept pass-through
+    - file: com/vega/main/update/VersionUpdateService.smali
+      pattern: '\.method public final a\(\)Z[\s\S]+?const/4 v0, 0x0\s+?return v0'
+      label: VersionUpdateService shouldShow returns false
 
 
 
