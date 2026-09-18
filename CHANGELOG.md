@@ -1,3 +1,9 @@
+## [1.4.2-dev.5](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.4...v1.4.2-dev.5) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* **capcut:** match CrackingInterceptor with or without NATIVE ([af9c523](https://github.com/riky-dev/morphe-patches/commit/af9c5234a11360eaf9b81d35b5e575e545a3270e))
+
 ## [1.4.2-dev.4](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.3...v1.4.2-dev.4) (2026-09-18)
 
 ### 🐛 Bug Fixes
