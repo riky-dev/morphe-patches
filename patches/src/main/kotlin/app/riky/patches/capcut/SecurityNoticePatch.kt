@@ -83,14 +83,17 @@ val securityNoticePatch = bytecodePatch(
 }
 
 /**
- * Strip the NATIVE access flag and attach an empty mutable implementation so
+ * Strip the NATIVE access flag (if present) and replace the body so
  * [addInstructions] can rewrite methods that previously lived only in .so code.
+ * Idempotent on already-demoted methods (re-patching a Morphe-patched APK).
  * Same approach as LemonSubscribeImpl.isVip in UnlockPremiumPatch.
  */
 private fun demoteNativeAndInject(method: MutableMethod, registerCount: Int, instructions: String) {
     try {
         val currentFlags = method.accessFlags
-        method.setAccessFlags(currentFlags and AccessFlags.NATIVE.value.inv())
+        if (currentFlags and AccessFlags.NATIVE.value != 0) {
+            method.setAccessFlags(currentFlags and AccessFlags.NATIVE.value.inv())
+        }
 
         val field = method.javaClass.getDeclaredField("_implementation\$delegate")
         field.isAccessible = true

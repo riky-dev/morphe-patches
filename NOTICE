@@ -14,7 +14,7 @@ Portions of the build tooling, release workflow, and patch bundle layout
 originate from that template. This modified version adds app-specific patches
 and agent-oriented development scripts.
 
-Modified: August 2026
+Modified: September 2026
 
 7c. Project Name Restriction
 ----------------------------
