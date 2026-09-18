@@ -1,3 +1,9 @@
+## [1.4.2-dev.4](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.3...v1.4.2-dev.4) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* **capcut:** tolerate 19.6.0 R.id drift across versionCodes ([525cab7](https://github.com/riky-dev/morphe-patches/commit/525cab741919fb079cca3f524199363e62cec58a))
+
 ## [1.4.2-dev.3](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.2...v1.4.2-dev.3) (2026-09-17)
 
 ### 🐛 Bug Fixes
