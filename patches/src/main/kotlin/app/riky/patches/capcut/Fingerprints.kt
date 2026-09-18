@@ -43,20 +43,20 @@ internal object CrackingWriteFingerprint : Fingerprint(
 
 // HTTP interceptor that inspects server `ret` / risk responses and can kill
 // the session or invoke showGlobalSecurityDialog. Stock builds ship this as
-// native; already-patched APKs may have NATIVE cleared — match both.
+// native; already-patched APKs may have NATIVE cleared. Morphe accessFlags
+// matching is exact equality, so omit flags and key off class + signature.
 internal object CrackingInterceptFingerprint : Fingerprint(
     definingClass = "Lcom/vega/launcher/network/interceptors/CrackingInterceptor;",
     name = "intercept",
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     returnType = "Lcom/bytedance/retrofit2/SsResponse;",
     parameters = listOf("Lcom/bytedance/retrofit2/intercept/Interceptor\$Chain;")
 )
 
 // Helper invoked from intercept to surface the security overlay (native on stock).
+// Same exact-flags caveat as CrackingInterceptFingerprint — omit accessFlags.
 internal object CrackingNativeDialogFingerprint : Fingerprint(
     definingClass = "Lcom/vega/launcher/network/interceptors/CrackingInterceptor;",
     name = "d",
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     returnType = "V",
     parameters = listOf("Ljava/lang/String;")
 )
