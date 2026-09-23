@@ -1,0 +1,19 @@
+id: vn
+package: com.frontrow.vlog
+display_name: VN
+apk_file_type: APKM
+apkpure_slug: vn-video-editor-maker-app
+analysis_dir: analysis/vn
+
+# Optional — large APKs. Uncomment if jadx OOMs.
+# decompile:
+#   jadx_max_heap: 4g
+#   jadx_threads: 2
+#   jadx_no_res: true
+
+# verify:
+#   apk: analysis/vn/extract/com.frontrow.vlog.apk
+#   smali_assertions:
+#     - file: ...
+#       pattern: 'const/4 v0, 0x1'
+#       label: isPremium spoof

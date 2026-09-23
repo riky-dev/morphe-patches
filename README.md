@@ -137,4 +137,6 @@ riky's patches are licensed under the [GNU General Public License v3.0](LICENSE)
 
 This project is based on the [Morphe patches template](https://github.com/MorpheApp/morphe-patches-template). Copyright (C) 2025 Morphe contributors. Modifications copyright (C) 2026 [riky-dev](https://github.com/riky-dev).
 
+VN Video Editor patches are adapted from [Paresh Maheshwari's archived paresh-patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches) (also GPL-3.0). That project invited community continuation after archival; see [NOTICE](NOTICE).
+
 See [NOTICE](NOTICE) for Morphe branding restrictions and additional terms.
