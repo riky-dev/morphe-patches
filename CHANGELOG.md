@@ -1,3 +1,13 @@
+## [2.0.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.5.0-dev.1...v2.0.0-dev.1) (2026-09-23)
+
+### ⚠ BREAKING CHANGES
+
+* **capcut:** CapCut support is 9.0.0 only; 19.2/19.6 patches removed.
+
+### ✨ New Features
+
+* **capcut:** retarget Unlock Premium to CapCut 9.0.0 ([a0185d8](https://github.com/riky-dev/morphe-patches/commit/a0185d8beec242d75ee9b8d76357ed890a40560a))
+
 ## [1.5.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.5...v1.5.0-dev.1) (2026-09-23)
 
 ### ✨ New Features

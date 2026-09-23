@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-23T12:22:14",
-  "description": "## [1.5.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.5...v1.5.0-dev.1) (2026-09-23)\n\n### ✨ New Features\n\n* **vn:** port Unlock Premium patch from archived paresh-patches ([e5bc2a7](https://github.com/riky-dev/morphe-patches/commit/e5bc2a71413acc45bf91c98063bc697032d34d15))",
-  "download_url": "https://github.com/riky-dev/morphe-patches/releases/download/v1.5.0-dev.1/patches-1.5.0-dev.1.mpp",
+  "created_at": "2026-09-23T14:29:31",
+  "description": "## [2.0.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.5.0-dev.1...v2.0.0-dev.1) (2026-09-23)\n\n### ⚠ BREAKING CHANGES\n\n* **capcut:** CapCut support is 9.0.0 only; 19.2/19.6 patches removed.\n\n### ✨ New Features\n\n* **capcut:** retarget Unlock Premium to CapCut 9.0.0 ([a0185d8](https://github.com/riky-dev/morphe-patches/commit/a0185d8beec242d75ee9b8d76357ed890a40560a))",
+  "download_url": "https://github.com/riky-dev/morphe-patches/releases/download/v2.0.0-dev.1/patches-2.0.0-dev.1.mpp",
   "signature_download_url": "",
-  "version": "1.5.0-dev.1"
+  "version": "2.0.0-dev.1"
 }
