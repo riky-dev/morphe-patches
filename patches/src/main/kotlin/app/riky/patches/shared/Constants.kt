@@ -43,15 +43,16 @@ object Constants {
         )
     )
 
-    // CapCut (international): https://apkpure.net/capcut-video-editor/com.lemon.lvoverseas
+    // CapCut (international) — clean-slate target 9.0.0 (APKMirror).
+    // Older than 19.x: no CrackingInterceptor/GeoBlock class surface; VIP via
+    // R8-renamed VipSubscribeManager (com.vega.subscribe.r).f().
     val COMPATIBILITY_CAPCUT = Compatibility(
         name = "CapCut",
         packageName = "com.lemon.lvoverseas",
         apkFileType = ApkFileType.APK,
         appIconColor = 0x00C4CC,
         targets = listOf(
-            AppTarget(version = "19.2.0"),
-            AppTarget(version = "19.6.0"),
+            AppTarget(version = "9.0.0"),
         )
     )
 
