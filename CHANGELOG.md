@@ -1,3 +1,9 @@
+## [2.0.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2026-09-23)
+
+### ✨ New Features
+
+* **vn:** hide export nags and projects ads on 2.20.0 ([b8d5826](https://github.com/riky-dev/morphe-patches/commit/b8d5826062a5af85f8ff855afed1392c22b04df1))
+
 ## [2.0.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.5.0-dev.1...v2.0.0-dev.1) (2026-09-23)
 
 ### ⚠ BREAKING CHANGES

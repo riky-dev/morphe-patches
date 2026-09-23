@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "2.0.0-dev.1",
+  "version": "2.0.0-dev.2",
   "patches": [
     {
       "name": "Hide ads",
@@ -55,6 +55,72 @@
       "options": []
     },
     {
+      "name": "Hide export nags",
+      "description": "Hides the post-export review dialog and the inspiring-tips guidance banner.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.frontrow.vlog",
+          "name": "VN",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#42484B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2.12.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": "2.20.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Hide projects ads",
+      "description": "Hides AdsLayout banners (Projects list and other in-app ad slots).",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.frontrow.vlog",
+          "name": "VN",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#42484B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2.12.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": "2.20.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Unlock Premium",
       "description": "Forces CapCut 9.0 VIP gates to true (VipSubscribeManager, SubscribeImpl, UserVipInfo, benefits). Cloud-gated assets may still fail.",
       "default": true,
@@ -82,7 +148,7 @@
     },
     {
       "name": "Unlock Premium",
-      "description": "Unlocks premium features, removes watermark, and hides Pro tab.",
+      "description": "Unlocks premium features, removes watermark, hides Pro tab, and hides the home upgrade-to-Pro banner.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -96,6 +162,13 @@
           "targets": [
             {
               "version": "2.12.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": "2.20.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,

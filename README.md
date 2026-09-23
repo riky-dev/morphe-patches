@@ -15,7 +15,7 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v2.0.0-dev.1](https://github.com/riky-dev/morphe-patches/releases/tag/v2.0.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
+> **[v2.0.0-dev.2](https://github.com/riky-dev/morphe-patches/releases/tag/v2.0.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;8 patches total
 <details open>
 <summary>📦 Electron: battery health info&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
@@ -47,6 +47,23 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 </details>
 
 <details open>
+<summary>📦 VN&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 2.12.0 | 2.20.0 |
+| :---: | :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Hide export nags](#hide-export-nags) | Hides the post-export review dialog and the inspiring-tips guidance banner. |  |
+| [Hide projects ads](#hide-projects-ads) | Hides AdsLayout banners (Projects list and other in-app ad slots). |  |
+| [Unlock Premium](#unlock-premium) | Unlocks premium features, removes watermark, hides Pro tab, and hides the home upgrade-to-Pro banner. |  |
+
+</details>
+
+<details open>
 <summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -58,21 +75,6 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Unlock Premium](#unlock-premium) | Forces CapCut 9.0 VIP gates to true (VipSubscribeManager, SubscribeImpl, UserVipInfo, benefits). Cloud-gated assets may still fail. |  |
-
-</details>
-
-<details open>
-<summary>📦 VN&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
-<br>
-
-**🎯 Supported versions:**
-
-| 2.12.0 |
-| :---: |
-
-| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
-|----------|----------------|-----------|
-| [Unlock Premium](#unlock-premium) | Unlocks premium features, removes watermark, and hides Pro tab. |  |
 
 </details>
 
