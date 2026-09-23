@@ -15,7 +15,7 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.4.2-dev.5](https://github.com/riky-dev/morphe-patches/releases/tag/v1.4.2-dev.5)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
+> **[v1.5.0-dev.1](https://github.com/riky-dev/morphe-patches/releases/tag/v1.5.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;11 patches total
 <details open>
 <summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
 <br>
@@ -63,6 +63,21 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Hide ads](#hide-ads) | Removes banner, native, cover and interstitial ads and unlocks premium features. |  |
+
+</details>
+
+<details open>
+<summary>📦 VN&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 2.12.0 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Unlock Premium](#unlock-premium) | Unlocks premium features, removes watermark, and hides Pro tab. |  |
 
 </details>
 

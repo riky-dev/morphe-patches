@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.4.2-dev.5",
+  "version": "1.5.0-dev.1",
   "patches": [
     {
       "name": "Hide Promotional UI",
@@ -242,6 +242,32 @@
             },
             {
               "version": "19.6.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Unlock Premium",
+      "description": "Unlocks premium features, removes watermark, and hides Pro tab.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.frontrow.vlog",
+          "name": "VN",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#42484B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2.12.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,

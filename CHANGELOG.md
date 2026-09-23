@@ -1,3 +1,9 @@
+## [1.5.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.5...v1.5.0-dev.1) (2026-09-23)
+
+### ✨ New Features
+
+* **vn:** port Unlock Premium patch from archived paresh-patches ([e5bc2a7](https://github.com/riky-dev/morphe-patches/commit/e5bc2a71413acc45bf91c98063bc697032d34d15))
+
 ## [1.4.2-dev.5](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.4...v1.4.2-dev.5) (2026-09-18)
 
 ### 🐛 Bug Fixes
