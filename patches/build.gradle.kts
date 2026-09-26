@@ -18,6 +18,26 @@ kotlin {
     }
 }
 
+// ExtensionPlugin exports DEX only. Package WireGuard natives as patch resources.
+val wireguardNative = configurations.create("wireguardNative") {
+    isTransitive = false
+}
+dependencies {
+    add(wireguardNative.name, libs.wireguard)
+}
+val wireguardResources = tasks.register<Sync>("wireguardResources") {
+    from(provider { zipTree(wireguardNative.singleFile) }) {
+        include("jni/*/libwg-go.so")
+        eachFile { path = path.removePrefix("jni/") }
+        includeEmptyDirs = false
+    }
+    into(layout.buildDirectory.dir("generated/wireguard-resources/wireguard/native"))
+}
+sourceSets.main {
+    resources.srcDir(layout.buildDirectory.dir("generated/wireguard-resources"))
+}
+tasks.processResources { dependsOn(wireguardResources) }
+
 // Separate configuration so gson is available at runtime for the
 // generatePatchesList task but never bundled into the APK.
 val patchListGeneratorClasspath = configurations.create("patchListGeneratorClasspath")

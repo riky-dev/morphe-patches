@@ -85,3 +85,11 @@ internal object BenefitGetFlagFingerprint : Fingerprint(
     returnType = "Z",
     parameters = listOf(),
 )
+
+/** CapCut Application.onCreate — network tunnel init hook. */
+internal object ScaffoldApplicationOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/vega/launcher/ScaffoldApplication;",
+    name = "onCreate",
+    returnType = "V",
+    parameters = listOf(),
+)
