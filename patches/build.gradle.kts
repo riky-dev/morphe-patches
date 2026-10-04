@@ -34,9 +34,10 @@ val wireguardResources = tasks.register<Sync>("wireguardResources") {
     into(layout.buildDirectory.dir("generated/wireguard-resources/wireguard/native"))
 }
 sourceSets.main {
-    resources.srcDir(layout.buildDirectory.dir("generated/wireguard-resources"))
+    resources.srcDir(wireguardResources)
 }
 tasks.processResources { dependsOn(wireguardResources) }
+tasks.named("sourcesJar") { dependsOn(wireguardResources) }
 
 // Separate configuration so gson is available at runtime for the
 // generatePatchesList task but never bundled into the APK.
