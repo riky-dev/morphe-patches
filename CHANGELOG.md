@@ -1,3 +1,9 @@
+## [2.1.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v2.1.0-dev.1...v2.1.0-dev.2) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **capcut:** bundle wireguard native libs in expected resource path ([1771cd3](https://github.com/riky-dev/morphe-patches/commit/1771cd3eae577a19cca450e1700d60896809aed2))
+
 ## [2.1.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.0.0...v2.1.0-dev.1) (2026-10-04)
 
 ### 🐛 Bug Fixes
