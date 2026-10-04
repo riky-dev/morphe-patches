@@ -34,6 +34,7 @@ internal val capcutNetworkTunnelResourcesPatch = resourcePatch {
                 "ACCESS_NETWORK_STATE",
                 "FOREGROUND_SERVICE",
                 "FOREGROUND_SERVICE_SYSTEM_EXEMPTED",
+                "POST_NOTIFICATIONS",
             ).forEach { name ->
                 val permission = "android.permission.$name"
                 val existing = doc.getElementsByTagName("uses-permission")
@@ -85,7 +86,7 @@ internal val capcutNetworkTunnelResourcesPatch = resourcePatch {
             application.appendChild(
                 doc.createElement("activity").apply {
                     setAttribute("android:name", TUNNEL_IMPORT)
-                    setAttribute("android:exported", "false")
+                    setAttribute("android:exported", "true")
                     setAttribute("android:excludeFromRecents", "true")
                     setAttribute(
                         "android:theme",
