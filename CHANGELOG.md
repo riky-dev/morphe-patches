@@ -1,3 +1,14 @@
+## [2.1.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.0.0...v2.1.0-dev.1) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **build:** wire wireguardResources dependency to sourcesJar ([7a40088](https://github.com/riky-dev/morphe-patches/commit/7a400888cd28e1bfc06691b029346fb1a21e563d))
+
+### ✨ New Features
+
+* **capcut:** add opt-in CapCut-scoped WireGuard network tunnel ([fc178bf](https://github.com/riky-dev/morphe-patches/commit/fc178bf150933751d727c22562554b7f339da76e))
+* **capcut:** bypass effects block by spoofing windows platform and guest device_id ([62fca92](https://github.com/riky-dev/morphe-patches/commit/62fca924a95e655acdf44335f30edf006aca6e72))
+
 ## [2.0.0](https://github.com/riky-dev/morphe-patches/compare/v1.4.1...v2.0.0) (2026-09-25)
 
 ### ⚠ BREAKING CHANGES
