@@ -1,3 +1,9 @@
+## [2.2.0](https://github.com/riky-dev/morphe-patches/compare/v2.1.0...v2.2.0) (2026-10-04)
+
+### ✨ New Features
+
+* **config:** verify APKPure package identifiers and fix meteo3b slug ([30e4d5b](https://github.com/riky-dev/morphe-patches/commit/30e4d5bc121491ceb4e606d4fd54b99313668c61))
+
 ## [2.1.0](https://github.com/riky-dev/morphe-patches/compare/v2.0.0...v2.1.0) (2026-10-04)
 
 ### 🐛 Bug Fixes
