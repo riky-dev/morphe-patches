@@ -28,10 +28,10 @@ dependencies {
 val wireguardResources = tasks.register<Sync>("wireguardResources") {
     from(provider { zipTree(wireguardNative.singleFile) }) {
         include("jni/*/libwg-go.so")
-        eachFile { path = path.removePrefix("jni/") }
+        eachFile { path = "wireguard/native/" + path.removePrefix("jni/") }
         includeEmptyDirs = false
     }
-    into(layout.buildDirectory.dir("generated/wireguard-resources/wireguard/native"))
+    into(layout.buildDirectory.dir("generated/wireguard-resources"))
 }
 sourceSets.main {
     resources.srcDir(wireguardResources)
