@@ -35,6 +35,7 @@ public final class TunnelImportActivity extends Activity {
     private Button save;
     private Button pick;
     private Button delete;
+    private Button stop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public final class TunnelImportActivity extends Activity {
 
         TextView help = new TextView(this);
         help.setText("Import your own WireGuard (wg-quick) config. Only CapCut traffic "
-                + "uses this tunnel. Prefer a Milan-class exit — India-class exits break effects.");
+                + "uses this tunnel. Try finding an exit that isn't blocked.");
         help.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         help.setTextColor(Color.DKGRAY);
         help.setPadding(0, dp(8), 0, dp(12));
@@ -129,6 +130,10 @@ public final class TunnelImportActivity extends Activity {
         row.addView(save, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
         root.addView(row, matchWrap());
 
+        LinearLayout bottomRow = new LinearLayout(this);
+        bottomRow.setOrientation(LinearLayout.HORIZONTAL);
+        bottomRow.setPadding(0, dp(6), 0, 0);
+
         delete = button("Delete saved config");
         delete.setOnClickListener(v -> {
             setBusy(true);
@@ -146,7 +151,28 @@ public final class TunnelImportActivity extends Activity {
                 }
             });
         });
-        root.addView(delete, matchWrap());
+        bottomRow.addView(delete, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+
+        stop = button("Stop using this");
+        stop.setOnClickListener(v -> {
+            setBusy(true);
+            manager.disableAndDisconnect(new WireGuardManager.ResultCallback() {
+                @Override public void ok() {
+                    setBusy(false);
+                    toast("VPN disabled");
+                    refreshStatus();
+                    finish();
+                }
+                @Override public void error(String message) {
+                    setBusy(false);
+                    toast(message);
+                    refreshStatus();
+                    finish();
+                }
+            });
+        });
+        bottomRow.addView(stop, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+        root.addView(bottomRow, matchWrap());
         return root;
     }
 
@@ -158,9 +184,14 @@ public final class TunnelImportActivity extends Activity {
 
     private void refreshStatus() {
         WireGuardManager.Snapshot snap = manager.snapshot();
-        String line = manager.hasConfig()
-                ? "Saved config: yes — state " + snap.state
-                : "Saved config: none — paste or import a .conf";
+        String line;
+        if (manager.isDisabled()) {
+            line = "Status: Disabled (not using VPN)";
+        } else if (manager.hasConfig()) {
+            line = "Saved config: yes — state " + snap.state;
+        } else {
+            line = "Saved config: none — paste or import a .conf";
+        }
         if (snap.error != null && !snap.error.isEmpty()) line += "\nLast error: " + snap.error;
         status.setText(line);
         delete.setEnabled(manager.hasConfig());
@@ -170,6 +201,7 @@ public final class TunnelImportActivity extends Activity {
         save.setEnabled(!busy);
         pick.setEnabled(!busy);
         delete.setEnabled(!busy && manager.hasConfig());
+        stop.setEnabled(!busy);
         editor.setEnabled(!busy);
     }
 

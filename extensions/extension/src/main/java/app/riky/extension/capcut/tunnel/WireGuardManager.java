@@ -49,6 +49,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class WireGuardManager {
     private static final String TAG = "RikyCapCutTunnel";
     private static final String ASSET_CONFIG = "riky-tunnel/default.conf";
+    private static final String PREFS_NAME = "riky_capcut_tunnel_prefs";
+    private static final String PREF_DISABLED = "tunnel_disabled";
 
     public enum State {
         NO_CONFIG, NEEDS_VPN_PERMISSION, DISCONNECTED, CONNECTING, VERIFYING, UNCONFIRMED, CONNECTED, ERROR
@@ -245,6 +247,29 @@ public final class WireGuardManager {
         });
     }
 
+    public boolean isDisabled() {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                .getBoolean(PREF_DISABLED, false);
+    }
+
+    public void setDisabled(boolean disabled) {
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                .edit()
+                .putBoolean(PREF_DISABLED, disabled)
+                .apply();
+    }
+
+    public void disableAndDisconnect(ResultCallback callback) {
+        worker.execute(() -> {
+            setDisabled(true);
+            if (!disconnectInternal()) {
+                main.post(() -> callback.error("Could not stop tunnel"));
+                return;
+            }
+            main.post(callback::ok);
+        });
+    }
+
     public void deleteConfiguration(ResultCallback callback) {
         worker.execute(() -> {
             if (!disconnectInternal()) {
@@ -264,11 +289,16 @@ public final class WireGuardManager {
     private void saveInternal(Config config) throws Exception {
         // Stop before replace; a malformed conf must not leave a half-written tunnel.
         if (!disconnectInternal()) throw new IOException("Could not stop tunnel");
+        setDisabled(false);
         storage.save(config);
         publish(State.DISCONNECTED, "");
     }
 
     private void connectInternal() {
+        if (isDisabled()) {
+            publish(State.DISCONNECTED, "");
+            return;
+        }
         if (active) return;
         if (serviceStopping) { reconnectAfterStop = true; return; }
         try {
