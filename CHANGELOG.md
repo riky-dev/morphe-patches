@@ -1,3 +1,9 @@
+## [2.1.0-dev.3](https://github.com/riky-dev/morphe-patches/compare/v2.1.0-dev.2...v2.1.0-dev.3) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **capcut:** allow disabling network tunnel and simplify exit guidance ([a6a3e31](https://github.com/riky-dev/morphe-patches/commit/a6a3e315b52e8d2a4216d5e26c1c4c8fe46dea33))
+
 ## [2.1.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v2.1.0-dev.1...v2.1.0-dev.2) (2026-10-04)
 
 ### 🐛 Bug Fixes
