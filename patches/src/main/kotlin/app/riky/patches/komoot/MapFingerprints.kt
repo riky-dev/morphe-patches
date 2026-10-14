@@ -6,8 +6,8 @@ import com.android.tools.smali.dexlib2.AccessFlags
 private const val packageClass =
     "Lde/komoot/android/services/api/model/Package;"
 
-/** RegionsData — aggregate map ownership shown in shop/offline UI. */
-internal object RegionsDataFingerprint : Fingerprint(
+/** Pre-2026.41.3 RegionsData (obfuscated wmt). */
+internal object RegionsDataLegacyFingerprint : Fingerprint(
     definingClass = "Lwmt;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
     parameters = listOf(
@@ -21,7 +21,23 @@ internal object RegionsDataFingerprint : Fingerprint(
     ),
 )
 
-/** Package.getMAllRegions() — world-pack flag from finance API / local DB. */
+/** 2026.41.3+ RegionsData (obfuscated wpl). */
+internal object RegionsDataFingerprint : Fingerprint(
+    definingClass = "Lwpl;",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf(
+        "Z",
+        "Ljava/util/Map;",
+        "Ljava/util/List;",
+        "Lmcf;",
+        "Ljava/util/Map;",
+        "Ljava/util/LinkedHashMap;",
+        "Ljava/util/Set;",
+        "Ls9h;",
+    ),
+)
+
+/** Pre-2026.41.3 Package.getMAllRegions(). */
 internal object PackageAllRegionsFingerprint : Fingerprint(
     definingClass = packageClass,
     name = "d",
@@ -30,11 +46,34 @@ internal object PackageAllRegionsFingerprint : Fingerprint(
     parameters = listOf(),
 )
 
-/** Package.getMActive() — active package flag paired with allRegions checks. */
+/** Pre-2026.41.3 Package.getMActive(). */
 internal object PackageActiveFingerprint : Fingerprint(
     definingClass = packageClass,
     name = "c",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     returnType = "Z",
     parameters = listOf(),
+)
+
+/** 2026.41.3+ Package(JSONObject) — fields b=allRegions, c=active (getters removed). */
+internal object PackageJsonInitFingerprint : Fingerprint(
+    definingClass = packageClass,
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf("Lorg/json/JSONObject;"),
+)
+
+/** Package full ctor — allRegions is p3; active already hardcoded true. */
+internal object PackageFullInitFingerprint : Fingerprint(
+    definingClass = packageClass,
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf(
+        "J",
+        "Z",
+        "Z",
+        "Ljava/lang/String;",
+        "Ljava/lang/String;",
+        "Z",
+        "Z",
+        "Lde/komoot/android/services/api/model/Region;",
+    ),
 )
