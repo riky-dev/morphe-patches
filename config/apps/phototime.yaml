@@ -1,0 +1,25 @@
+# Tramonto & Alba: PhotoTime (issue #17) — Italian Play Store name for
+# Sunset & Sunrise / PhotoTime by Paweł Zarzycki.
+id: phototime
+package: pl.guteklabs.phototime
+display_name: "Tramonto & Alba: PhotoTime"
+apk_file_type: XAPK
+apkpure_slug: golden-hour-for-photography
+analysis_dir: analysis/phototime
+
+# Keep heap modest so phototime decompile can coexist with other apps.
+decompile:
+  jadx_max_heap: 1g
+  jadx_threads: 1
+
+verify:
+  apk: analysis/phototime/extract/pl.guteklabs.phototime.apk
+  smali_assertions:
+    - file: du6.smali
+      method: a
+      pattern: 'const/4 v0, 0x1'
+      label: du6.isPremium
+    - file: cca.smali
+      method: P
+      pattern: 'sget-object v0, Ldu6;->PREMIUM:Ldu6;'
+      label: cca.premiumFromFlags
