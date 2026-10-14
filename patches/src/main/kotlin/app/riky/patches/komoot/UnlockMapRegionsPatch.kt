@@ -17,26 +17,52 @@ val unlockMapRegionsPatch = bytecodePatch(
     compatibleWith(COMPATIBILITY_KOMOOT)
 
     execute {
-        // Force ownsWorldPack=true when GetRegionsDataUseCase builds RegionsData.
-        RegionsDataFingerprint.method.addInstruction(
-            0,
-            "const/4 p1, 0x1",
-        )
+        // Force ownsWorldPack=true when RegionsData is constructed (class rename in 2026.41.3).
+        try {
+            RegionsDataFingerprint.method.addInstruction(0, "const/4 p1, 0x1")
+        } catch (_: Exception) {
+            RegionsDataLegacyFingerprint.method.addInstruction(0, "const/4 p1, 0x1")
+        }
 
-        // Treat every finance Package as an active world-pack purchase.
-        PackageAllRegionsFingerprint.method.addInstructions(
-            0,
-            """
-                const/4 p0, 0x1
-                return p0
-            """,
-        )
-        PackageActiveFingerprint.method.addInstructions(
-            0,
-            """
-                const/4 p0, 0x1
-                return p0
-            """,
-        )
+        // Spoof Package world-pack / active flags (getters removed in 2026.41.3).
+        var usedFieldSpoof = false
+        try {
+            val packageJson = PackageJsonInitFingerprint.method
+            packageJson.addInstructions(
+                packageJson.implementation!!.instructions.lastIndex,
+                """
+                    const/4 v0, 0x1
+                    iput-boolean v0, p0, Lde/komoot/android/services/api/model/Package;->b:Z
+                    const/4 v0, 0x1
+                    iput-boolean v0, p0, Lde/komoot/android/services/api/model/Package;->c:Z
+                """,
+            )
+            usedFieldSpoof = true
+        } catch (_: Exception) {
+            // fall through to getters
+        }
+
+        try {
+            PackageFullInitFingerprint.method.addInstruction(0, "const/4 p3, 0x1")
+        } catch (_: Exception) {
+            // optional on older builds
+        }
+
+        if (!usedFieldSpoof) {
+            PackageAllRegionsFingerprint.method.addInstructions(
+                0,
+                """
+                    const/4 p0, 0x1
+                    return p0
+                """,
+            )
+            PackageActiveFingerprint.method.addInstructions(
+                0,
+                """
+                    const/4 p0, 0x1
+                    return p0
+                """,
+            )
+        }
     }
 }

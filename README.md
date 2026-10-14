@@ -15,24 +15,21 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.4.1](https://github.com/riky-dev/morphe-patches/releases/tag/v1.4.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
+> **[v2.2.0](https://github.com/riky-dev/morphe-patches/releases/tag/v2.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
 <details open>
-<summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
+<summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
 
 **🎯 Supported versions:**
 
-| 19.2.0 |
+| 9.0.0 |
 | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Hide Promotional UI](#hide-promotional-ui) | Suppresses home banners, export promos, subscription paywalls, Pro badges, Lynx promo modals, and PC diversion popups. |  |
-| [Hide Unavailable Features](#hide-unavailable-features) | Hides cloud-gated editor options that won't work offline: AI sounds, super resolution, optical flow, and smart frame interpolation. |  |
-| [Remove Security Notice](#remove-security-notice) | Suppresses the modified-build security notice by disabling the risk SDK dialog entry point and the isCracking flag writer. |  |
-| [Simplify Navigation](#simplify-navigation) | Removes the Templates, Inbox, and AI Lab bottom navigation tabs. |  |
-| [Suppress Telemetry](#suppress-telemetry) | Disables background monitoring and analytics frameworks including ByteDance Helios, AppLog, and AppsFlyer. |  |
-| [Unlock Premium](#unlock-premium) | Forces the VIP flag to true so premium features are unlocked client-side. Server-validated assets (cloud effects/templates) are not affected. |  |
+| [Bypass effects region restriction](#bypass-effects-region-restriction) | Fixes effects/transitions not loading (Shark WAF block) by spoofing device_platform from "android" to "windows" in effect API requests. |  |
+| [CapCut network tunnel](#capcut-network-tunnel) | Opt-in CapCut-only WireGuard tunnel. Import your own wg-quick .conf (paste or file) in-app; traffic is scoped to CapCut only. Requires Android VPN consent once. Independent of Unlock Premium. |  |
+| [Unlock Premium](#unlock-premium) | Forces CapCut 9.0 VIP gates to true (VipSubscribeManager, SubscribeImpl, UserVipInfo, benefits). Cloud-gated assets may still fail. |  |
 
 </details>
 
@@ -57,12 +54,29 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 
 **🎯 Supported versions:**
 
-| 4.9.15 |
+| 4.9.16 |
 | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Hide ads](#hide-ads) | Removes banner, native, cover and interstitial ads and unlocks premium features. |  |
+
+</details>
+
+<details open>
+<summary>📦 VN&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 2.12.0 | 2.20.0 |
+| :---: | :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Hide export nags](#hide-export-nags) | Hides the post-export review dialog and the inspiring-tips guidance banner. |  |
+| [Hide projects ads](#hide-projects-ads) | Hides AdsLayout banners (Projects list and other in-app ad slots). |  |
+| [Unlock Premium](#unlock-premium) | Unlocks premium features, removes watermark, hides Pro tab, and hides the home upgrade-to-Pro banner. |  |
 
 </details>
 
@@ -136,5 +150,7 @@ Fixes, easiest first:
 riky's patches are licensed under the [GNU General Public License v3.0](LICENSE).
 
 This project is based on the [Morphe patches template](https://github.com/MorpheApp/morphe-patches-template). Copyright (C) 2025 Morphe contributors. Modifications copyright (C) 2026 [riky-dev](https://github.com/riky-dev).
+
+VN Video Editor patches are adapted from [Paresh Maheshwari's archived paresh-patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches) (also GPL-3.0). That project invited community continuation after archival; see [NOTICE](NOTICE).
 
 See [NOTICE](NOTICE) for Morphe branding restrictions and additional terms.

@@ -21,8 +21,16 @@ internal object PublicUserProfileV7Fingerprint : Fingerprint(
     parameters = listOf("L", "L", "L", "L", "Z"),
 )
 
-internal object RoutingPermissionInitFingerprint : Fingerprint(
+/** Pre-2026.41.3: RoutingPermission(StatusPermission). */
+internal object RoutingPermissionStatusInitFingerprint : Fingerprint(
     definingClass = "$routingPermissionClass;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
     parameters = listOf("${routingPermissionClass}\$StatusPermission;"),
+)
+
+/** 2026.41.3+: RoutingPermission(JSONObject) — StatusPermission ctor removed. */
+internal object RoutingPermissionJsonInitFingerprint : Fingerprint(
+    definingClass = "$routingPermissionClass;",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf("Lorg/json/JSONObject;"),
 )

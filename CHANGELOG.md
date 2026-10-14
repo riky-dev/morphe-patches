@@ -1,3 +1,120 @@
+## [2.2.0](https://github.com/riky-dev/morphe-patches/compare/v2.1.0...v2.2.0) (2026-10-04)
+
+### ✨ New Features
+
+* **config:** verify APKPure package identifiers and fix meteo3b slug ([30e4d5b](https://github.com/riky-dev/morphe-patches/commit/30e4d5bc121491ceb4e606d4fd54b99313668c61))
+
+## [2.1.0](https://github.com/riky-dev/morphe-patches/compare/v2.0.0...v2.1.0) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **build:** wire wireguardResources dependency to sourcesJar ([7a40088](https://github.com/riky-dev/morphe-patches/commit/7a400888cd28e1bfc06691b029346fb1a21e563d))
+* **capcut:** allow disabling network tunnel and simplify exit guidance ([a6a3e31](https://github.com/riky-dev/morphe-patches/commit/a6a3e315b52e8d2a4216d5e26c1c4c8fe46dea33))
+* **capcut:** bundle wireguard native libs in expected resource path ([1771cd3](https://github.com/riky-dev/morphe-patches/commit/1771cd3eae577a19cca450e1700d60896809aed2))
+
+### ✨ New Features
+
+* **capcut:** add opt-in CapCut-scoped WireGuard network tunnel ([fc178bf](https://github.com/riky-dev/morphe-patches/commit/fc178bf150933751d727c22562554b7f339da76e))
+* **capcut:** bypass effects block by spoofing windows platform and guest device_id ([62fca92](https://github.com/riky-dev/morphe-patches/commit/62fca924a95e655acdf44335f30edf006aca6e72))
+
+## [2.1.0-dev.3](https://github.com/riky-dev/morphe-patches/compare/v2.1.0-dev.2...v2.1.0-dev.3) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **capcut:** allow disabling network tunnel and simplify exit guidance ([a6a3e31](https://github.com/riky-dev/morphe-patches/commit/a6a3e315b52e8d2a4216d5e26c1c4c8fe46dea33))
+
+## [2.1.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v2.1.0-dev.1...v2.1.0-dev.2) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **capcut:** bundle wireguard native libs in expected resource path ([1771cd3](https://github.com/riky-dev/morphe-patches/commit/1771cd3eae577a19cca450e1700d60896809aed2))
+
+## [2.1.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.0.0...v2.1.0-dev.1) (2026-10-04)
+
+### 🐛 Bug Fixes
+
+* **build:** wire wireguardResources dependency to sourcesJar ([7a40088](https://github.com/riky-dev/morphe-patches/commit/7a400888cd28e1bfc06691b029346fb1a21e563d))
+
+### ✨ New Features
+
+* **capcut:** add opt-in CapCut-scoped WireGuard network tunnel ([fc178bf](https://github.com/riky-dev/morphe-patches/commit/fc178bf150933751d727c22562554b7f339da76e))
+* **capcut:** bypass effects block by spoofing windows platform and guest device_id ([62fca92](https://github.com/riky-dev/morphe-patches/commit/62fca924a95e655acdf44335f30edf006aca6e72))
+
+## [2.0.0](https://github.com/riky-dev/morphe-patches/compare/v1.4.1...v2.0.0) (2026-09-25)
+
+### ⚠ BREAKING CHANGES
+
+* **capcut:** CapCut support is 9.0.0 only; 19.2/19.6 patches removed.
+
+### 🐛 Bug Fixes
+
+* **capcut:** harden security notice for geo-gated crack/force-update ([c92aaa8](https://github.com/riky-dev/morphe-patches/commit/c92aaa8457af0bc744a812e35a04a001bab6c1e5))
+* **capcut:** match CrackingInterceptor with or without NATIVE ([af9c523](https://github.com/riky-dev/morphe-patches/commit/af9c5234a11360eaf9b81d35b5e575e545a3270e))
+* **capcut:** tolerate 19.6.0 R.id drift across versionCodes ([525cab7](https://github.com/riky-dev/morphe-patches/commit/525cab741919fb079cca3f524199363e62cec58a))
+* **capcut:** update Simplify Navigation tab IDs for 19.6.0 ([c4d7d37](https://github.com/riky-dev/morphe-patches/commit/c4d7d3728c3ba1d7bbccace765f3c9130a79ae7f))
+
+### ✨ New Features
+
+* **capcut:** retarget Unlock Premium to CapCut 9.0.0 ([a0185d8](https://github.com/riky-dev/morphe-patches/commit/a0185d8beec242d75ee9b8d76357ed890a40560a))
+* **vn:** hide export nags and projects ads on 2.20.0 ([b8d5826](https://github.com/riky-dev/morphe-patches/commit/b8d5826062a5af85f8ff855afed1392c22b04df1))
+* **vn:** port Unlock Premium patch from archived paresh-patches ([e5bc2a7](https://github.com/riky-dev/morphe-patches/commit/e5bc2a71413acc45bf91c98063bc697032d34d15))
+
+### 🚀 Updated App Support
+
+* 3BMeteo target version 4.9.15 → 4.9.16 ([3b62fd8](https://github.com/riky-dev/morphe-patches/commit/3b62fd88cfdca2c47cb31fb3d2e682f050289d3f))
+
+## [2.0.0-dev.2](https://github.com/riky-dev/morphe-patches/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2026-09-23)
+
+### ✨ New Features
+
+* **vn:** hide export nags and projects ads on 2.20.0 ([b8d5826](https://github.com/riky-dev/morphe-patches/commit/b8d5826062a5af85f8ff855afed1392c22b04df1))
+
+## [2.0.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.5.0-dev.1...v2.0.0-dev.1) (2026-09-23)
+
+### ⚠ BREAKING CHANGES
+
+* **capcut:** CapCut support is 9.0.0 only; 19.2/19.6 patches removed.
+
+### ✨ New Features
+
+* **capcut:** retarget Unlock Premium to CapCut 9.0.0 ([a0185d8](https://github.com/riky-dev/morphe-patches/commit/a0185d8beec242d75ee9b8d76357ed890a40560a))
+
+## [1.5.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.5...v1.5.0-dev.1) (2026-09-23)
+
+### ✨ New Features
+
+* **vn:** port Unlock Premium patch from archived paresh-patches ([e5bc2a7](https://github.com/riky-dev/morphe-patches/commit/e5bc2a71413acc45bf91c98063bc697032d34d15))
+
+## [1.4.2-dev.5](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.4...v1.4.2-dev.5) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* **capcut:** match CrackingInterceptor with or without NATIVE ([af9c523](https://github.com/riky-dev/morphe-patches/commit/af9c5234a11360eaf9b81d35b5e575e545a3270e))
+
+## [1.4.2-dev.4](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.3...v1.4.2-dev.4) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* **capcut:** tolerate 19.6.0 R.id drift across versionCodes ([525cab7](https://github.com/riky-dev/morphe-patches/commit/525cab741919fb079cca3f524199363e62cec58a))
+
+## [1.4.2-dev.3](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.2...v1.4.2-dev.3) (2026-09-17)
+
+### 🐛 Bug Fixes
+
+* **capcut:** update Simplify Navigation tab IDs for 19.6.0 ([c4d7d37](https://github.com/riky-dev/morphe-patches/commit/c4d7d3728c3ba1d7bbccace765f3c9130a79ae7f))
+
+## [1.4.2-dev.2](https://github.com/riky-dev/morphe-patches/compare/v1.4.2-dev.1...v1.4.2-dev.2) (2026-09-17)
+
+### 🐛 Bug Fixes
+
+* **capcut:** harden security notice for geo-gated crack/force-update ([c92aaa8](https://github.com/riky-dev/morphe-patches/commit/c92aaa8457af0bc744a812e35a04a001bab6c1e5))
+
+## [1.4.2-dev.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.1...v1.4.2-dev.1) (2026-09-08)
+
+### 🚀 Updated App Support
+
+* 3BMeteo target version 4.9.15 → 4.9.16 ([3b62fd8](https://github.com/riky-dev/morphe-patches/commit/3b62fd88cfdca2c47cb31fb3d2e682f050289d3f))
+
 ## [1.4.1](https://github.com/riky-dev/morphe-patches/compare/v1.4.0...v1.4.1) (2026-08-30)
 
 ### 🐛 Bug Fixes

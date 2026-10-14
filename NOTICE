@@ -14,7 +14,28 @@ Portions of the build tooling, release workflow, and patch bundle layout
 originate from that template. This modified version adds app-specific patches
 and agent-oriented development scripts.
 
-Modified: August 2026
+VN Video Editor patches were adapted from Paresh Maheshwari's archived
+paresh-patches project (GPL-3.0), with permission for community continuation:
+
+https://gitlab.com/Paresh-Maheshwari/paresh-patches
+
+Copyright (C) Paresh Maheshwari
+Copyright (C) 2026 riky-dev (adaptation into this bundle)
+
+Modified: September 2026
+
+CapCut network tunnel
+---------------------
+
+The CapCut WireGuard embed is adapted from the closed Piko PR
+https://github.com/crimera/piko/pull/1945 (Twitter/X embedded WireGuard).
+
+Copyright (C) 2026 piko / crimera contributors
+Copyright (C) 2026 riky-dev (CapCut-scoped adaptation)
+
+Upstream WireGuard Android tunnel / wireguard-go binaries and licenses are
+bundled under patches/src/main/resources/wireguard/ and copied into the
+patched APK at assets/riky-tunnel/. See that NOTICE for third-party terms.
 
 7c. Project Name Restriction
 ----------------------------

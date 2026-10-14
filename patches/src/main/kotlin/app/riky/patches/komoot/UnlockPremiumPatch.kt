@@ -1,8 +1,13 @@
 package app.riky.patches.komoot
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.riky.patches.shared.Constants.COMPATIBILITY_KOMOOT
+
+private const val GRANTED =
+    "Lde/komoot/android/services/api/model/RoutingPermission\$StatusPermission;" +
+        "->GRANTED:Lde/komoot/android/services/api/model/RoutingPermission\$StatusPermission;"
 
 @Suppress("unused")
 val unlockPremiumPatch = bytecodePatch(
@@ -26,13 +31,23 @@ val unlockPremiumPatch = bytecodePatch(
             "const/4 p5, 0x1",
         )
 
-        // Force routing permission to GRANTED so navigation is not paywalled client-side.
-        // Primary constructor: getClass -> super.<init> -> iput-object mStatus (index 2).
-        RoutingPermissionInitFingerprint.method.addInstruction(
-            2,
-            """
-                sget-object p1, Lde/komoot/android/services/api/model/RoutingPermission${'$'}StatusPermission;->GRANTED:Lde/komoot/android/services/api/model/RoutingPermission${'$'}StatusPermission;
-            """,
-        )
+        // Force routing permission to GRANTED (ctor shape changed in 2026.41.3).
+        try {
+            // 2026.41.3+: JSONObject ctor — overwrite field a before return.
+            val routingInit = RoutingPermissionJsonInitFingerprint.method
+            routingInit.addInstructions(
+                routingInit.implementation!!.instructions.lastIndex,
+                """
+                    sget-object v0, $GRANTED
+                    iput-object v0, p0, Lde/komoot/android/services/api/model/RoutingPermission;->a:Lde/komoot/android/services/api/model/RoutingPermission${'$'}StatusPermission;
+                """,
+            )
+        } catch (_: Exception) {
+            // Pre-2026.41.3: StatusPermission ctor — overwrite p1 before iput at index 2.
+            RoutingPermissionStatusInitFingerprint.method.addInstruction(
+                2,
+                "sget-object p1, $GRANTED",
+            )
+        }
     }
 }
