@@ -15,7 +15,7 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v2.2.1](https://github.com/riky-dev/morphe-patches/releases/tag/v2.2.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
+> **[v2.3.0-dev.1](https://github.com/riky-dev/morphe-patches/releases/tag/v2.3.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;11 patches total
 <details open>
 <summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
@@ -77,6 +77,21 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 | [Hide export nags](#hide-export-nags) | Hides the post-export review dialog and the inspiring-tips guidance banner. |  |
 | [Hide projects ads](#hide-projects-ads) | Hides AdsLayout banners (Projects list and other in-app ad slots). |  |
 | [Unlock Premium](#unlock-premium) | Unlocks premium features, removes watermark, hides Pro tab, and hides the home upgrade-to-Pro banner. |  |
+
+</details>
+
+<details open>
+<summary>📦 Tramonto & Alba: PhotoTime&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 8.2.3 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Unlock Premium](#unlock-premium) | Forces PremiumStatus checks to succeed so client-gated PhotoTime features unlock. Weather/forecast may still need network. |  |
 
 </details>
 

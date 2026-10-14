@@ -1,3 +1,9 @@
+## [2.3.0-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.2.1...v2.3.0-dev.1) (2026-10-14)
+
+### ✨ New Features
+
+* **phototime:** unlock Premium for Tramonto & Alba PhotoTime 8.2.3 ([b17459a](https://github.com/riky-dev/morphe-patches/commit/b17459aeb2bc0fd02a054661659bc2edfb4d2913)), closes [#17](https://github.com/riky-dev/morphe-patches/issues/17)
+
 ## [2.2.1](https://github.com/riky-dev/morphe-patches/compare/v2.2.0...v2.2.1) (2026-10-14)
 
 ### 🐛 Bug Fixes
