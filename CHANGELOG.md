@@ -1,4 +1,4 @@
-## [2.2.1-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.2.0...v2.2.1-dev.1) (2026-10-14)
+## [2.2.1](https://github.com/riky-dev/morphe-patches/compare/v2.2.0...v2.2.1) (2026-10-14)
 
 ### 🐛 Bug Fixes
 
