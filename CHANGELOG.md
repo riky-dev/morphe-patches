@@ -1,3 +1,9 @@
+## [2.2.1](https://github.com/riky-dev/morphe-patches/compare/v2.2.0...v2.2.1) (2026-10-14)
+
+### 🐛 Bug Fixes
+
+* **komoot:** restore premium and map patches on 2026.41.3 ([0cca5a6](https://github.com/riky-dev/morphe-patches/commit/0cca5a679014fc1823e71ba7fb4381e14c9a84d6))
+
 ## [2.2.0](https://github.com/riky-dev/morphe-patches/compare/v2.1.0...v2.2.0) (2026-10-04)
 
 ### ✨ New Features
