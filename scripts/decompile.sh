@@ -38,7 +38,7 @@ JADX_OUT="$APP_ANALYSIS_DIR/jadx_out"
 APKTOOL_OUT="$APP_ANALYSIS_DIR/apktool_out"
 
 CONFIG_FILE="$CONFIG_DIR/${APP_ID}.yaml"
-read -r JADX_HEAP JADX_THREADS JADX_NO_RES < <(
+IFS='|' read -r JADX_HEAP JADX_THREADS JADX_NO_RES < <(
   python3 - "$CONFIG_FILE" <<'PY'
 import sys
 from pathlib import Path
@@ -48,7 +48,7 @@ heap = ""
 threads = ""
 no_res = "false"
 if not path.is_file():
-    print(f"{heap}\t{threads}\t{no_res}")
+    print(f"{heap}|{threads}|{no_res}")
     raise SystemExit
 
 in_decompile = False
@@ -73,7 +73,7 @@ for raw in path.read_text().splitlines():
             val = inner.split(":", 1)[1].strip().strip("'\"").lower()
             no_res = "true" if val in ("true", "yes", "1") else "false"
 
-print(f"{heap}\t{threads}\t{no_res}")
+print(f"{heap}|{threads}|{no_res}")
 PY
 )
 
@@ -94,7 +94,7 @@ if [[ ${#JADX_ARGS[@]} -gt 0 ]]; then
 fi
 rm -rf "$JADX_OUT"
 # Keep jadx errors visible; apktool stays quiet unless it fails.
-jadx "${JADX_ARGS[@]}" -d "$JADX_OUT" "$APK"
+jadx "${JADX_ARGS[@]}" -d "$JADX_OUT" "$APK" || [[ -d "$JADX_OUT/sources" ]] || die "jadx failed"
 
 log "Decompiling with apktool: $APK"
 rm -rf "$APKTOOL_OUT"
