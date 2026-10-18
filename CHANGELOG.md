@@ -1,3 +1,9 @@
+## [2.3.2-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.3.1...v2.3.2-dev.1) (2026-10-18)
+
+### 🐛 Bug Fixes
+
+* **meteo3b:** prevent 401 error on historical data for logged-out users ([#2](https://github.com/riky-dev/morphe-patches/issues/2)) ([6504705](https://github.com/riky-dev/morphe-patches/commit/6504705f849be0000a11b1bb1dde576b2a4ab5fa))
+
 ## [2.3.1](https://github.com/riky-dev/morphe-patches/compare/v2.3.0...v2.3.1) (2026-10-18)
 
 ### 🚀 Updated App Support
