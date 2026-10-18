@@ -22,3 +22,7 @@ verify:
     - file: com/Meteosolutions/Meteo3b/data/models/User.java
       pattern: 'return true;'
       label: isConsentlessPremium
+    - file: com/Meteosolutions/Meteo3b/manager/adv/BannerManager.java
+      pattern: 'return false;'
+      label: isInterstitialAllowed
+
