@@ -1,3 +1,9 @@
+## [2.3.1](https://github.com/riky-dev/morphe-patches/compare/v2.3.0...v2.3.1) (2026-10-18)
+
+### 🚀 Updated App Support
+
+* support VN 2.22.1 and 3BMeteo 4.9.17 ([9ac7002](https://github.com/riky-dev/morphe-patches/commit/9ac70026e30734889217cb9a68032e95ff975e4d))
+
 ## [2.3.1-dev.1](https://github.com/riky-dev/morphe-patches/compare/v2.3.0...v2.3.1-dev.1) (2026-10-17)
 
 ### 🚀 Updated App Support
