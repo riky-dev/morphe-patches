@@ -34,3 +34,29 @@ internal object IsConsentlessPremiumFingerprint : Fingerprint(
     returnType = "Z",
     parameters = listOf()
 )
+
+internal object IsInterstitialAllowedFingerprint : Fingerprint(
+    definingClass = "Lcom/Meteosolutions/Meteo3b/manager/adv/BannerManager;",
+    name = "isInterstitialAllowed",
+    accessFlags = listOf(AccessFlags.PUBLIC),
+    returnType = "Z",
+    parameters = listOf()
+)
+
+internal object HistoricalViewModelFingerprint : Fingerprint(
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf(
+        "Lcom/Meteosolutions/Meteo3b/data/repositories/HistoricalRepository;",
+        "Lcom/Meteosolutions/Meteo3b/data/repositories/JwtRepository;",
+        "Landroid/content/Context;"
+    )
+)
+
+internal object HistoricalViewModelGetUserTypeFingerprint : Fingerprint(
+    classFingerprint = HistoricalViewModelFingerprint,
+    strings = listOf("[HistoricalViewModel - getUserType: "),
+    filters = listOf(
+        app.morphe.patcher.methodCall("Lcom/Meteosolutions/Meteo3b/data/models/User;->isPremium()Z")
+    )
+)
+
