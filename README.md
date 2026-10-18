@@ -15,7 +15,7 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v2.3.0](https://github.com/riky-dev/morphe-patches/releases/tag/v2.3.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;11 patches total
+> **[v2.3.1-dev.1](https://github.com/riky-dev/morphe-patches/releases/tag/v2.3.1-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;11 patches total
 <details open>
 <summary>📦 CapCut&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
@@ -54,8 +54,8 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 
 **🎯 Supported versions:**
 
-| 4.9.16 |
-| :---: |
+| 4.9.16 | 4.9.17 |
+| :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
@@ -69,8 +69,8 @@ Stable releases come from `main`. To try preview builds from `dev`, enable **pre
 
 **🎯 Supported versions:**
 
-| 2.12.0 | 2.20.0 |
-| :---: | :---: |
+| 2.12.0 | 2.20.0 | 2.22.1 |
+| :---: | :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|

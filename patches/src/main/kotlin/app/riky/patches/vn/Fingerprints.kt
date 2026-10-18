@@ -43,7 +43,6 @@ internal object ExportReviewDialogFingerprint : Fingerprint(
  */
 internal object ExportGuidanceBannerFingerprint : Fingerprint(
     strings = listOf("Enhance your videos with simple, inspiring tips"),
-    parameters = listOf("Z", "Ljava/lang/String;", "Lnm0/a;", "Lnm0/a;", "Z", "Lnm0/a;"),
 )
 
 /** Shared ads host used by Projects / Create / Export banners. */

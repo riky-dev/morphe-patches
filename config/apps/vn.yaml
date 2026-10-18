@@ -16,6 +16,6 @@ verify:
     - file: com/frontrow/vlog/service/PremiumServiceImpl.smali
       pattern: 'const/4 v0, 0x1'
       label: PremiumServiceImpl.e spoof
-    - file: tf/b.smali
+    - file: wf/b.smali
       pattern: 'const/4 p5, 0x0'
       label: showGuidanceBanner forced false
